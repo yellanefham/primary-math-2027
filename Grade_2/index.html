@@ -849,42 +849,7 @@ body {
 .cert-title { font-size: 1.6rem; font-weight: 900; color: #1e293b; margin-bottom: 8px; }
 .cert-body { font-size: 1rem; color: #475569; margin-bottom: 20px; }
 
-/* Hub quick switcher */
-.hub-link-bar {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(8px);
-  border: 1px solid #cbd5e1;
-  border-radius: var(--radius-md);
-  padding: 10px 16px;
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-.hub-tags {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-.hub-tag {
-  background: #f1f5f9;
-  border: 1px solid #cbd5e1;
-  color: #334155;
-  padding: 4px 10px;
-  border-radius: 8px;
-  font-size: 0.8rem;
-  font-weight: 800;
-  text-decoration: none;
-  transition: all 0.2s ease;
-}
-.hub-tag:hover, .hub-tag.active {
-  background: var(--primary);
-  color: white;
-  border-color: var(--primary);
-}
+
 </style>
 </head>
 <body>
@@ -904,7 +869,7 @@ body {
     <div class="header-actions">
       <div class="score-badge" id="score-display">⭐ النجوم: <span id="star-count">0</span></div>
       <button class="pill-btn" onclick="toggleAudio()" id="sound-btn">🔊 الصوت: شغال</button>
-      <a href="../index.html" class="pill-btn">🏫 بوابة كل الصفوف</a>
+      
     </div>
   </div>
 </header>
@@ -912,18 +877,7 @@ body {
 <main class="main-wrapper">
 
   <!-- ================= GRADES NAV BAR ================= -->
-  <div class="hub-link-bar">
-    <div style="font-weight: 800; font-size: 0.9rem; color: #475569;">
-      📚 الانتقال السريع بين المشروعات:
-    </div>
-    <div class="hub-tags">
-      <a href="../Grade_1/index.html" class="hub-tag">الصف 1 (Grade 1)</a>
-      <a href="index.html" class="hub-tag active">الصف 2 (Grade 2)</a>
-      <a href="../Grade_3/index.html" class="hub-tag">الصف 3 (Grade 3)</a>
-      <a href="../Grade_4/index.html" class="hub-tag">الصف 4 (Grade 4)</a>
-      <a href="../Grade_5/index.html" class="hub-tag">الصف 5 (Grade 5)</a>
-    </div>
-  </div>
+  
 
   <!-- ================= TABS ================= -->
   <nav class="nav-tabs">

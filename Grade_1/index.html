@@ -4,30 +4,45 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>كتاب المعاصر ماث — الصف الأول الابتدائي (ترم أول 2027) | منصة التعلم التفاعلي</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
   --primary: #ec4899;
   --primary-dark: #be185d;
   --secondary: #3b82f6;
+  --accent-yellow: #f59e0b;
+  --accent-green: #10b981;
   --card-bg: #ffffff;
   --text-dark: #1e293b;
-  --radius-lg: 20px;
-  --radius-md: 14px;
+  --text-muted: #64748b;
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --shadow-sm: 0 4px 6px -1px rgba(0,0,0,0.06);
+  --shadow-md: 0 10px 25px -5px rgba(236, 72, 153, 0.15);
 }
-* { margin:0; padding:0; box-sizing:border-box; }
+
+* { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color: transparent; }
+
 body {
   font-family: 'Cairo', system-ui, sans-serif;
   background: linear-gradient(135deg, #fff1f2 0%, #fdf2f8 50%, #eff6ff 100%);
   color: var(--text-dark);
   min-height: 100vh;
   padding-bottom: 60px;
+  overflow-x: hidden;
 }
+
+/* ================= HEADER ================= */
 .header {
-  background: linear-gradient(135deg, #ec4899 0%, #f43f5e 100%);
+  background: linear-gradient(135deg, #ec4899 0%, #f43f5e 50%, #fb7185 100%);
   color: white;
   padding: 18px 24px;
-  box-shadow: 0 8px 20px rgba(236, 72, 153, 0.3);
+  box-shadow: 0 8px 24px rgba(236, 72, 153, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 .header-inner {
   max-width: 1200px;
@@ -38,171 +53,899 @@ body {
   flex-wrap: wrap;
   gap: 12px;
 }
-.hub-bar {
-  background: white; padding: 10px 16px; border-radius: var(--radius-md);
-  margin: 20px auto; max-width: 1200px; display: flex; align-items: center;
-  justify-content: space-between; flex-wrap: wrap; gap: 10px;
+.brand-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
 }
-.hub-tags { display: flex; gap: 8px; flex-wrap: wrap; }
-.hub-tag {
-  background: #f1f5f9; border: 1px solid #cbd5e1; color: #334155;
-  padding: 4px 10px; border-radius: 8px; font-size: 0.82rem; font-weight: 800; text-decoration: none;
+.brand-badge {
+  background: rgba(255,255,255,0.25);
+  border: 2px solid rgba(255,255,255,0.4);
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
 }
-.hub-tag:hover, .hub-tag.active { background: var(--primary); color: white; border-color: var(--primary); }
-.main-wrapper { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
+.brand-text h1 {
+  font-size: 1.35rem;
+  font-weight: 900;
+  line-height: 1.2;
+}
+.brand-text p {
+  font-size: 0.85rem;
+  opacity: 0.95;
+}
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.score-badge {
+  background: #fef08a;
+  color: #854d0e;
+  border: 2px solid #facc15;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.95rem;
+}
+.pill-btn {
+  background: rgba(255,255,255,0.25);
+  border: 1px solid rgba(255,255,255,0.4);
+  color: white;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.pill-btn:hover { background: rgba(255,255,255,0.4); }
+
+/* ================= NAVIGATION TABS ================= */
+.main-wrapper {
+  max-width: 1200px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+.nav-tabs {
+  display: flex;
+  gap: 10px;
+  background: white;
+  padding: 8px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 24px;
+  overflow-x: auto;
+}
+.tab-btn {
+  flex: 1;
+  min-width: 180px;
+  padding: 12px 16px;
+  border: none;
+  background: transparent;
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+  font-family: inherit;
+}
+.tab-btn:hover { background: #fdf2f8; color: var(--primary); }
+.tab-btn.active {
+  background: linear-gradient(135deg, var(--primary) 0%, #f43f5e 100%);
+  color: white;
+  box-shadow: 0 6px 16px rgba(236, 72, 153, 0.3);
+}
+
+.tab-pane { display: none; animation: fadeIn 0.3s ease; }
+.tab-pane.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
 .card {
-  background: var(--card-bg); border-radius: var(--radius-lg); padding: 24px;
-  margin-bottom: 24px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.08);
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid #fce7f3;
 }
-.chapter-hero {
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 2px dashed #fbcfe8;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.card-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.card-title .icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  background: #fce7f3;
+  color: var(--primary);
+}
+.card-title h2 { font-size: 1.3rem; font-weight: 800; }
+.card-title span.sub { font-size: 0.85rem; color: var(--text-muted); display: block; }
+.badge-ch {
+  background: #fce7f3;
+  color: #9d174d;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+/* ================= CHAPTER 1: NUMBERS UP TO 10 ================= */
+.counting-shelf {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 12px;
+  margin: 16px 0 24px;
 }
-.chapter-box {
-  background: #fff5f7; border: 2px solid #fbcfe8; border-radius: var(--radius-md);
+.num-balloon {
+  background: white;
+  border: 3px solid #f472b6;
+  border-radius: 20px;
+  padding: 14px 6px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+}
+.num-balloon:hover {
+  transform: translateY(-8px) scale(1.05);
+  border-color: var(--primary);
+  background: #fff1f2;
+}
+.num-balloon .digit {
+  font-family: 'Fredoka', 'Cairo', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #db2777;
+  display: block;
+}
+.num-balloon .word {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #475569;
+}
+
+/* Ten-frame Interactive Sandbox */
+.ten-frame-box {
+  background: #fdf2f8;
+  border: 2px solid #fbcfe8;
+  border-radius: var(--radius-md);
   padding: 20px;
+  text-align: center;
+  margin: 20px 0;
 }
-.chapter-box h3 { font-size: 1.15rem; font-weight: 800; color: #9d174d; margin-bottom: 6px; }
-.chapter-box p { font-size: 0.88rem; color: #64748b; margin-bottom: 14px; }
+.ten-frame-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 54px);
+  grid-template-rows: repeat(2, 54px);
+  gap: 8px;
+  margin: 14px auto;
+  width: max-content;
+  background: white;
+  padding: 12px;
+  border-radius: 16px;
+  border: 3px solid #f472b6;
+  box-shadow: 0 4px 12px rgba(244, 114, 182, 0.2);
+}
+.ten-frame-cell {
+  border: 2px dashed #cbd5e1;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  cursor: pointer;
+  background: #f8fafc;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+.ten-frame-cell.filled {
+  border-style: solid;
+  border-color: #ec4899;
+  background: #fdf2f8;
+  transform: scale(0.95);
+}
+
+/* Number Bonds: What makes 5 and 10 */
+.bonds-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 20px;
+}
+@media (max-width: 768px) { .bonds-container { grid-template-columns: 1fr; } }
+
+.bond-card {
+  background: white;
+  border: 2px solid #fed7aa;
+  border-radius: var(--radius-md);
+  padding: 18px;
+  text-align: center;
+}
+.bond-number {
+  font-size: 2.2rem;
+  font-weight: 900;
+  font-family: 'Fredoka', sans-serif;
+  color: #ea580c;
+}
+
+/* ================= CHAPTER 2: WHAT'S THE POSITION? ================= */
+.track-card {
+  background: linear-gradient(180deg, #38bdf8 0%, #7dd3fc 40%, #16a34a 41%, #15803d 100%);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.finish-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 60px;
+  width: 18px;
+  background: repeating-linear-gradient(
+    to bottom,
+    #000 0px, #000 12px,
+    #fff 12px, #fff 24px
+  );
+  box-shadow: 2px 0 6px rgba(0,0,0,0.3);
+}
+.cars-lane {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-left: 90px;
+  margin-top: 20px;
+}
+.racing-car-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(255,255,255,0.92);
+  color: #1e293b;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 0.95rem;
+  width: max-content;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.racing-car-item:hover { transform: scale(1.05); }
+
+/* Pet Position Studio */
+.position-studio {
+  background: #f0fdf4;
+  border: 2px solid #bbf7d0;
+  border-radius: var(--radius-md);
+  padding: 24px;
+  text-align: center;
+  margin-top: 20px;
+}
+.stage-box {
+  width: 220px;
+  height: 180px;
+  margin: 16px auto;
+  background: white;
+  border: 3px solid #86efac;
+  border-radius: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+}
+.cat-actor {
+  font-size: 46px;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: absolute;
+}
+.box-prop { font-size: 54px; }
+
+/* ================= CHAPTER 3: ADDITION ================= */
+.addition-beach {
+  background: linear-gradient(180deg, #67e8f9 0%, #fed7aa 60%, #fdba74 100%);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  text-align: center;
+}
+.beach-calc-wrap {
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 16px auto;
+  max-width: 480px;
+  box-shadow: var(--shadow-sm);
+}
+.beach-display {
+  font-size: 2.2rem;
+  font-weight: 900;
+  font-family: 'Fredoka', 'Cairo', sans-serif;
+  color: #0369a1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.beach-items-view {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 14px 0;
+  font-size: 32px;
+}
+
+/* ================= BUTTONS & SOUND ================= */
 .btn {
-  padding: 8px 16px; border-radius: 10px; font-weight: 800; font-size: 0.88rem;
-  border: none; cursor: pointer; text-decoration: none; display: inline-flex;
-  align-items: center; gap: 6px; font-family: inherit;
+  padding: 10px 20px;
+  border-radius: 14px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  cursor: pointer;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: inherit;
+  transition: all 0.2s ease;
 }
-.btn-primary { background: var(--primary); color: white; }
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary) 0%, #f43f5e 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(236, 72, 153, 0.25);
+}
+.btn-primary:hover { transform: translateY(-2px); }
 .btn-secondary { background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1; }
-/* Interactive 1-10 Frame */
-.ten-frame {
-  display: grid; grid-template-columns: repeat(5, 42px); grid-template-rows: repeat(2, 42px);
-  gap: 6px; background: white; padding: 10px; border-radius: 12px; border: 2px solid #f472b6;
-  margin: 12px auto; width: max-content;
+.btn-success { background: #10b981; color: white; }
+
+.speech-btn {
+  background: #fce7f3;
+  border: 2px solid #fbcfe8;
+  color: #be185d;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
 }
-.frame-cell {
-  border: 2px dashed #cbd5e1; border-radius: 8px; display: flex;
-  align-items: center; justify-content: center; font-size: 22px; cursor: pointer;
-}
-.frame-cell.filled { background: #fdf2f8; border-style: solid; border-color: #ec4899; }
+.speech-btn:hover { transform: scale(1.1); }
+
+/* Confetti */
+#confetti-canvas { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 9999; }
 </style>
 </head>
 <body>
 
+<canvas id="confetti-canvas"></canvas>
+
 <header class="header">
   <div class="header-inner">
-    <div style="display: flex; align-items: center; gap: 12px;">
-      <div style="font-size: 32px; background: rgba(255,255,255,0.2); padding: 6px 12px; border-radius: 12px;">🎈</div>
-      <div>
+    <div class="brand-group">
+      <div class="brand-badge">🎈</div>
+      <div class="brand-text">
         <h1>كتاب المعاصر ماث — الصف الأول الابتدائي (2027)</h1>
         <p>المنهج المطور • الترم الأول • Chapters 1, 2, 3</p>
       </div>
     </div>
-    <a href="../index.html" class="btn btn-secondary">🏫 بوابة كل الصفوف</a>
+    <div class="header-actions">
+      <div class="score-badge">⭐ النجوم: <span id="star-count">0</span></div>
+      <button class="pill-btn" onclick="toggleAudio()" id="sound-btn">🔊 الصوت: شغال</button>
+    </div>
   </div>
 </header>
 
 <main class="main-wrapper">
-  <div class="hub-bar">
-    <div style="font-weight: 800; font-size: 0.9rem; color: #475569;">
-      📚 مشروعات المراحل الدراسية:
-    </div>
-    <div class="hub-tags">
-      <a href="index.html" class="hub-tag active">الصف 1 (Grade 1)</a>
-      <a href="../Grade_2/index.html" class="hub-tag">الصف 2 (Grade 2)</a>
-      <a href="../Grade_3/index.html" class="hub-tag">الصف 3 (Grade 3)</a>
-      <a href="../Grade_4/index.html" class="hub-tag">الصف 4 (Grade 4)</a>
-      <a href="../Grade_5/index.html" class="hub-tag">الصف 5 (Grade 5)</a>
+
+  <nav class="nav-tabs">
+    <button class="tab-btn active" onclick="switchTab('ch1', this)">
+      <span>🔢</span> Chapter 1: Numbers up to 10
+    </button>
+    <button class="tab-btn" onclick="switchTab('ch2', this)">
+      <span>🧭</span> Chapter 2: What's the position?
+    </button>
+    <button class="tab-btn" onclick="switchTab('ch3', this)">
+      <span>➕</span> Chapter 3: Addition Concepts
+    </button>
+    <button class="tab-btn" onclick="switchTab('quiz', this)">
+      <span>🏆</span> Challenge & Quiz
+    </button>
+  </nav>
+
+  <!-- ================= TAB 1: CHAPTER 1 ================= -->
+  <div id="tab-ch1" class="tab-pane active">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">
+          <div class="icon">🔢</div>
+          <div>
+            <h2>Chapter 1: Numbers up to 10</h2>
+            <span class="sub">كتاب المعاصر ص 10-70 • العد، إطار العشر خانات، مكونات الأرقام، والصفر (Zero)</span>
+          </div>
+        </div>
+        <div>
+          <button class="speech-btn" onclick="speakText('مرحباً بك يا بطل الصف الأول في عالم الأرقام حتى 10. اضغط على أي بالون لسماع اسمه وعد النجوم في إطار العشر خانات.')">🎙️</button>
+          <span class="badge-ch">Lessons 1 to 13</span>
+        </div>
+      </div>
+
+      <p style="font-size: 0.95rem; color: #475569; margin-bottom: 12px;">
+        🎈 <strong>شريط الأرقام والبالونات (Numbers 1 to 10):</strong> اضغط على أي رقم لسماع نطقه وتمثيله:
+      </p>
+
+      <div class="counting-shelf">
+        <div class="num-balloon" onclick="selectNumber(1, 'One')"><span class="digit">1</span><span class="word">One</span></div>
+        <div class="num-balloon" onclick="selectNumber(2, 'Two')"><span class="digit">2</span><span class="word">Two</span></div>
+        <div class="num-balloon" onclick="selectNumber(3, 'Three')"><span class="digit">3</span><span class="word">Three</span></div>
+        <div class="num-balloon" onclick="selectNumber(4, 'Four')"><span class="digit">4</span><span class="word">Four</span></div>
+        <div class="num-balloon" onclick="selectNumber(5, 'Five')"><span class="digit">5</span><span class="word">Five</span></div>
+        <div class="num-balloon" onclick="selectNumber(6, 'Six')"><span class="digit">6</span><span class="word">Six</span></div>
+        <div class="num-balloon" onclick="selectNumber(7, 'Seven')"><span class="digit">7</span><span class="word">Seven</span></div>
+        <div class="num-balloon" onclick="selectNumber(8, 'Eight')"><span class="digit">8</span><span class="word">Eight</span></div>
+        <div class="num-balloon" onclick="selectNumber(9, 'Nine')"><span class="digit">9</span><span class="word">Nine</span></div>
+        <div class="num-balloon" onclick="selectNumber(10, 'Ten')"><span class="digit">10</span><span class="word">Ten</span></div>
+        <div class="num-balloon" style="border-color: #94a3b8;" onclick="selectNumber(0, 'Zero')"><span class="digit" style="color: #64748b;">0</span><span class="word">Zero</span></div>
+      </div>
+
+      <!-- Ten-Frame Sandbox -->
+      <div class="ten-frame-box">
+        <h3 style="font-size: 1.1rem; font-weight: 800; color: #9d174d; margin-bottom: 4px;">
+          ⭐ معمل إطار العشر خانات (Ten-Frame Interactive Lab)
+        </h3>
+        <p style="font-size: 0.88rem; color: #701a75;">
+          اضغط على المربعات لوضع النجوم أو إزالتها ومتابعة العدد:
+        </p>
+
+        <div class="ten-frame-grid" id="ten-frame-grid"></div>
+
+        <div style="font-size: 1.25rem; font-weight: 900; color: #db2777;" id="ten-frame-status">
+          العدد الممثل: 0 نجوم
+        </div>
+        <div style="margin-top: 10px;">
+          <button class="btn btn-secondary" onclick="clearTenFrame()">🔄 مسح الإطار</button>
+        </div>
+      </div>
+
+      <!-- What makes 5 and 10? (Lesson 4, 11) -->
+      <div class="bonds-container">
+        <div class="bond-card">
+          <h4 style="color: #c2410c; margin-bottom: 6px;">🌈 ما الذي يكون العدد 5؟ (What makes 5?)</h4>
+          <div class="bond-number">5</div>
+          <p style="font-size: 0.88rem; color: #475569; margin: 8px 0;">اختر زوجاً من الأعداد مجموعهما 5:</p>
+          <div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
+            <button class="btn btn-secondary" onclick="checkBond(this, true, '2 + 3 = 5')">2 + 3</button>
+            <button class="btn btn-secondary" onclick="checkBond(this, true, '1 + 4 = 5')">1 + 4</button>
+            <button class="btn btn-secondary" onclick="checkBond(this, false, '3 + 3 = 6')">3 + 3</button>
+            <button class="btn btn-secondary" onclick="checkBond(this, true, '5 + 0 = 5')">5 + 0</button>
+          </div>
+        </div>
+
+        <div class="bond-card" style="border-color: #a7f3d0;">
+          <h4 style="color: #047857; margin-bottom: 6px;">🌟 ما الذي يكون العدد 10؟ (What makes 10?)</h4>
+          <div class="bond-number" style="color: #059669;">10</div>
+          <p style="font-size: 0.88rem; color: #475569; margin: 8px 0;">اختر زوجاً من أصدقاء العشرة:</p>
+          <div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
+            <button class="btn btn-secondary" onclick="checkBond(this, true, '6 + 4 = 10')">6 + 4</button>
+            <button class="btn btn-secondary" onclick="checkBond(this, true, '7 + 3 = 10')">7 + 3</button>
+            <button class="btn btn-secondary" onclick="checkBond(this, false, '4 + 4 = 8')">4 + 4</button>
+            <button class="btn btn-secondary" onclick="checkBond(this, true, '8 + 2 = 10')">8 + 2</button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="chapter-hero">
-    <!-- Chapter 1 -->
-    <div class="chapter-box">
-      <h3>🔢 Chapter 1: Numbers up to 10</h3>
-      <p>العد وكتابة الأرقام حتى 10، إطار العشر خانات (Ten-frame)، وما الذي يكون 5 و 10، والرقم صفر (Zero).</p>
-      <div style="text-align: center;">
-        <span style="font-size: 0.85rem; font-weight: 700; color: #be185d;">اضغط على الخانات لملئها وعدها:</span>
-        <div class="ten-frame" id="frame-10"></div>
-        <div style="font-weight: 800; color: #9d174d; margin-top: 6px;" id="frame-count">العدد: 0</div>
-      </div>
-    </div>
-
-    <!-- Chapter 2 -->
-    <div class="chapter-box" style="background: #f0fdf4; border-color: #bbf7d0;">
-      <h3 style="color: #166534;">🧭 Chapter 2: What's the position?</h3>
-      <p>تحديد المواقع والاتجاهات: (Inside / Outside, In front of / Behind, Above / Under, Left / Right).</p>
-      <div style="background: white; border-radius: 12px; padding: 16px; text-align: center; border: 2px solid #86efac; margin-top: 10px;">
-        <div style="font-size: 40px;" id="pos-box">📦 🐱</div>
-        <div style="margin-top: 10px; font-weight: 800; color: #15803d;" id="pos-text">The cat is NEXT TO the box (بجانب)</div>
-        <div style="display: flex; gap: 6px; justify-content: center; margin-top: 10px;">
-          <button class="btn btn-secondary" onclick="setPos('inside')">داخل Inside</button>
-          <button class="btn btn-secondary" onclick="setPos('above')">فوق Above</button>
-          <button class="btn btn-secondary" onclick="setPos('behind')">خلف Behind</button>
+  <!-- ================= TAB 2: CHAPTER 2 ================= -->
+  <div id="tab-ch2" class="tab-pane">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">
+          <div class="icon">🧭</div>
+          <div>
+            <h2>Chapter 2: What's the position?</h2>
+            <span class="sub">كتاب المعاصر ص 76-93 • ترتيب المتسابقين (First, Second, Third) وتحديد الأماكن والاتجاهات</span>
+          </div>
+        </div>
+        <div>
+          <button class="speech-btn" onclick="speakText('في الشابتر الثاني نتعلم تحديد المواقع: الأول والثاني والثالث، وداخل وخارج، وفوق وتحت، ويمين ويسار')">🎙️</button>
+          <span class="badge-ch">Lessons 1 & 2</span>
         </div>
       </div>
-    </div>
 
-    <!-- Chapter 3 -->
-    <div class="chapter-box" style="background: #eff6ff; border-color: #bfdbfe;">
-      <h3 style="color: #1d4ed8;">➕ Chapter 3: Addition up to 10</h3>
-      <p>مفهوم الجمع كضم مجموعتين، والجمع مع الصفر، وقصص الجمع اللطيفة المصورة.</p>
-      <div style="background: white; border-radius: 12px; padding: 16px; text-align: center; border: 2px solid #93c5fd; margin-top: 10px;">
-        <div style="font-size: 1.8rem; font-weight: 900; color: #1e40af; font-family: 'Fredoka', 'Cairo', sans-serif;">
-          <span id="g1-a">3</span> 🦆 + <span id="g1-b">2</span> 🦆 = <span id="g1-sum" style="color: #ec4899;">5</span> 🦆
+      <!-- Racing Track (Lesson 1 - Grand Finish) -->
+      <h3 style="font-size: 1.05rem; font-weight: 800; color: #1e293b; margin-bottom: 8px;">
+        🏎️ مضمار سباق السيارات (Grand Finish Race - ص 76):
+      </h3>
+      <div class="track-card">
+        <div class="finish-line"></div>
+        <div style="font-weight: 900; font-size: 1.1rem; text-shadow: 1px 1px 3px rgba(0,0,0,0.4);">
+          🏁 خط النهاية (FINISH LINE)
         </div>
-        <div style="margin-top: 12px;">
-          <button class="btn btn-primary" onclick="randomG1Add()">🎲 مسألة جمع جديدة</button>
+        <div class="cars-lane">
+          <div class="racing-car-item" onclick="explainCar('السيارة الحمراء هي في المركز الأول 1st: في المقدمة In front of')">
+            <span style="font-size: 26px;">🏎️</span>
+            <span>1st — السيارة الحمراء في المركز الأول (First)</span>
+          </div>
+          <div class="racing-car-item" onclick="explainCar('السيارة الزرقاء في المركز الثاني 2nd: خلف الحمراء Behind')">
+            <span style="font-size: 26px;">🚙</span>
+            <span>2nd — السيارة الزرقاء في المركز الثاني (Second)</span>
+          </div>
+          <div class="racing-car-item" onclick="explainCar('السيارة الصفراء في المركز الثالث 3rd: في المؤخرة')">
+            <span style="font-size: 26px;">🚖</span>
+            <span>3rd — السيارة الصفراء في المركز الثالث (Third)</span>
+          </div>
+        </div>
+        <div id="track-explain" style="font-size: 0.9rem; font-weight: 800; background: rgba(0,0,0,0.6); padding: 8px 14px; border-radius: 8px; width: max-content;">
+          اضغط على أي سيارة لمعرفة مركزها وموقعها!
+        </div>
+      </div>
+
+      <!-- Inside / Outside / Above / Under Studio (Lesson 2) -->
+      <div class="position-studio">
+        <h3 style="font-size: 1.1rem; font-weight: 800; color: #166534; margin-bottom: 6px;">
+          🐱 استوديو أين هو؟ (Where is it? Inside, Outside, Above, Under)
+        </h3>
+        <p style="font-size: 0.88rem; color: #475569;">
+          اضغط على الأزرار لتغيير مكان القطة بالنسبة للصندوق:
+        </p>
+
+        <div class="stage-box">
+          <span class="box-prop">📦</span>
+          <span class="cat-actor" id="cat-actor" style="transform: translate(60px, 0);">🐱</span>
+        </div>
+
+        <div style="font-size: 1.15rem; font-weight: 800; color: #15803d; margin-bottom: 14px;" id="pos-feedback">
+          The cat is NEXT TO the box (بجانب الصندوق)
+        </div>
+
+        <div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
+          <button class="btn btn-secondary" onclick="moveCat('inside')">📥 Inside (بالداخل)</button>
+          <button class="btn btn-secondary" onclick="moveCat('above')">⬆️ Above (فوق)</button>
+          <button class="btn btn-secondary" onclick="moveCat('under')">⬇️ Under (تحت)</button>
+          <button class="btn btn-secondary" onclick="moveCat('outside')">📤 Outside (بالخارج)</button>
+          <button class="btn btn-secondary" onclick="moveCat('left')">⬅️ Left (يسار)</button>
+          <button class="btn btn-secondary" onclick="moveCat('right')">➡️ Right (يمين)</button>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- ================= TAB 3: CHAPTER 3 ================= -->
+  <div id="tab-ch3" class="tab-pane">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">
+          <div class="icon">➕</div>
+          <div>
+            <h2>Chapter 3: Addition Concepts</h2>
+            <span class="sub">كتاب المعاصر ص 94-118 • ضم المجموعات، الجمع مع الصفر، وقصص الجمع المصورة</span>
+          </div>
+        </div>
+        <div>
+          <button class="speech-btn" onclick="speakText('في الشابتر الثالث نتعلم الجمع بضم مجموعتين واستخدام علامة الزائد واليساوي، والجمع مع الصفر')">🎙️</button>
+          <span class="badge-ch">Lessons 1 to 4</span>
+        </div>
+      </div>
+
+      <!-- Beach Merging Sand Lab (Page 94) -->
+      <div class="addition-beach">
+        <h3 style="color: #0e7490; font-size: 1.15rem; font-weight: 900; margin-bottom: 6px;">
+          🏖️ معمل ضم المجموعات (Beach Shells & Ducks: 4 + 2)
+        </h3>
+        <p style="color: #155e75; font-size: 0.9rem;">
+          عندما نجمع، نضم الأشياء معاً في مجموعة واحدة:
+        </p>
+
+        <div class="beach-calc-wrap">
+          <div class="beach-items-view" id="beach-icons">
+            <div>🦆🦆🦆🦆</div>
+            <div style="font-size: 24px; color: #0284c7;">➕</div>
+            <div>🦆🦆</div>
+          </div>
+          <div class="beach-display">
+            <span id="add-a">4</span> + <span id="add-b">2</span> = <span id="add-sum" style="color: #ec4899;">6</span>
+          </div>
+          <div style="margin-top: 14px;">
+            <button class="btn btn-primary" onclick="randomBeachAdd()">🎲 مسألة جديدة</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Addition with Zero (Lesson 3 - ص 106) -->
+      <div style="background: #fffbeb; border: 2px solid #fde68a; border-radius: var(--radius-md); padding: 20px; margin-top: 20px; text-align: center;">
+        <h3 style="color: #b45309; font-size: 1.1rem; font-weight: 800; margin-bottom: 6px;">
+          0️⃣ الجمع مع الصفر (Addition with Zero "0")
+        </h3>
+        <p style="color: #78350f; font-size: 0.9rem; margin-bottom: 12px;">
+          أي عدد نجمعه مع الصفر يظل كما هو دون تغيير:
+        </p>
+        <div style="font-size: 1.8rem; font-weight: 900; color: #d97706; font-family: 'Fredoka', sans-serif;">
+          5 + 0 = 5 &nbsp;&nbsp;|&nbsp;&nbsp; 0 + 8 = 8
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= TAB 4: QUIZ ================= -->
+  <div id="tab-quiz" class="tab-pane">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">
+          <div class="icon" style="background: #fef08a; color: #a16207;">🏆</div>
+          <div>
+            <h2>تحدي الأبطال لـ Grade 1 (Quiz Challenge)</h2>
+            <span class="sub">أسئلة تفاعلية ممتعة للحصول على النجوم وشهادة التميز</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="g1-quiz-box"></div>
+    </div>
+  </div>
+
 </main>
 
 <script>
-let count10 = 0;
-function initFrame() {
-  const f = document.getElementById('frame-10');
-  f.innerHTML = '';
-  for(let i=0; i<10; i++) {
+let soundEnabled = true;
+const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+function playTone(freq, dur) {
+  if (!soundEnabled) return;
+  try {
+    const osc = audioCtx.createOscillator();
+    const g = audioCtx.createGain();
+    osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+    g.gain.setValueAtTime(0.2, audioCtx.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + dur);
+    osc.connect(g); g.connect(audioCtx.destination);
+    osc.start(); osc.stop(audioCtx.currentTime + dur);
+  } catch(e) {}
+}
+
+function playSuccess() {
+  playTone(523, 0.12);
+  setTimeout(() => playTone(659, 0.12), 100);
+  setTimeout(() => playTone(783, 0.2), 200);
+}
+
+function toggleAudio() {
+  soundEnabled = !soundEnabled;
+  document.getElementById('sound-btn').innerText = soundEnabled ? '🔊 الصوت: شغال' : '🔇 الصوت: صامت';
+}
+
+function speakText(txt) {
+  if (!('speechSynthesis' in window)) return;
+  window.speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(txt);
+  u.lang = 'ar-SA';
+  u.rate = 0.95;
+  window.speechSynthesis.speak(u);
+}
+
+let stars = 0;
+function addStar() {
+  stars++;
+  document.getElementById('star-count').innerText = stars;
+  playSuccess();
+  launchConfetti();
+}
+
+function launchConfetti() {
+  const c = document.getElementById('confetti-canvas');
+  const ctx = c.getContext('2d');
+  c.width = window.innerWidth; c.height = window.innerHeight;
+  const p = [];
+  for(let i=0; i<50; i++) {
+    p.push({ x: c.width/2, y: c.height/3, vx: (Math.random()-0.5)*12, vy: (Math.random()-0.6)*12, s: Math.random()*8+4, color: '#ec4899' });
+  }
+  let f = 0;
+  function loop() {
+    ctx.clearRect(0,0,c.width,c.height);
+    p.forEach(it => { it.x += it.vx; it.y += it.vy; it.vy += 0.3; ctx.fillStyle = it.color; ctx.fillRect(it.x, it.y, it.s, it.s); });
+    f++;
+    if (f < 50) requestAnimationFrame(loop);
+    else ctx.clearRect(0,0,c.width,c.height);
+  }
+  loop();
+}
+
+function switchTab(id, btn) {
+  document.querySelectorAll('.tab-pane').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+  document.getElementById(`tab-${id}`).classList.add('active');
+  btn.classList.add('active');
+}
+
+/* Chapter 1 */
+function selectNumber(num, word) {
+  playTone(440 + num * 30, 0.15);
+  speakText(`${num} ${word}`);
+  // fill ten-frame to this number
+  const cells = document.querySelectorAll('.ten-frame-cell');
+  cells.forEach((c, idx) => {
+    if (idx < num) {
+      c.classList.add('filled');
+      c.innerText = '⭐';
+    } else {
+      c.classList.remove('filled');
+      c.innerText = '';
+    }
+  });
+  document.getElementById('ten-frame-status').innerText = `العدد الممثل: ${num} (${word})`;
+  addStar();
+}
+
+function initTenFrame() {
+  const g = document.getElementById('ten-frame-grid');
+  g.innerHTML = '';
+  for (let i = 0; i < 10; i++) {
     const c = document.createElement('div');
-    c.className = 'frame-cell';
+    c.className = 'ten-frame-cell';
     c.onclick = () => {
       c.classList.toggle('filled');
       c.innerText = c.classList.contains('filled') ? '⭐' : '';
-      updateCount();
+      const filled = document.querySelectorAll('.ten-frame-cell.filled').length;
+      document.getElementById('ten-frame-status').innerText = `العدد الممثل: ${filled} نجوم`;
+      playTone(400 + filled * 30, 0.1);
+      if (filled === 10) addStar();
     };
-    f.appendChild(c);
+    g.appendChild(c);
   }
 }
-function updateCount() {
-  const filled = document.querySelectorAll('.frame-cell.filled').length;
-  document.getElementById('frame-count').innerText = `العدد: ${filled}`;
+function clearTenFrame() {
+  document.querySelectorAll('.ten-frame-cell').forEach(c => { c.classList.remove('filled'); c.innerText = ''; });
+  document.getElementById('ten-frame-status').innerText = 'العدد الممثل: 0 نجوم';
 }
 
-function setPos(p) {
-  const box = document.getElementById('pos-box');
-  const txt = document.getElementById('pos-text');
-  if (p === 'inside') {
-    box.innerText = '📦(🐱)';
-    txt.innerText = 'The cat is INSIDE the box (داخل الصندوق)';
-  } else if (p === 'above') {
-    box.innerHTML = '🐱<br>📦';
-    txt.innerText = 'The cat is ABOVE the box (فوق الصندوق)';
+function checkBond(btn, isCorrect, msg) {
+  if (isCorrect) {
+    btn.style.background = '#10b981';
+    btn.style.color = 'white';
+    speakText(`أحسنت! ${msg}`);
+    addStar();
   } else {
-    box.innerText = '📦🐱';
-    txt.innerText = 'The cat is BEHIND the box (خلف الصندوق)';
+    btn.style.background = '#ef4444';
+    btn.style.color = 'white';
+    playTone(200, 0.2);
   }
 }
 
-function randomG1Add() {
+/* Chapter 2 */
+function explainCar(msg) {
+  document.getElementById('track-explain').innerText = msg;
+  speakText(msg);
+  addStar();
+}
+
+function moveCat(pos) {
+  const cat = document.getElementById('cat-actor');
+  const txt = document.getElementById('pos-feedback');
+  if (pos === 'inside') {
+    cat.style.transform = 'translate(0px, 0px) scale(0.7)';
+    txt.innerText = 'The cat is INSIDE the box (داخل الصندوق)';
+    speakText('داخل الصندوق Inside');
+  } else if (pos === 'above') {
+    cat.style.transform = 'translate(0px, -70px)';
+    txt.innerText = 'The cat is ABOVE the box (فوق الصندوق)';
+    speakText('فوق الصندوق Above');
+  } else if (pos === 'under') {
+    cat.style.transform = 'translate(0px, 70px)';
+    txt.innerText = 'The cat is UNDER the box (تحت الصندوق)';
+    speakText('تحت الصندوق Under');
+  } else if (pos === 'outside') {
+    cat.style.transform = 'translate(80px, 0px)';
+    txt.innerText = 'The cat is OUTSIDE the box (خارج الصندوق)';
+    speakText('خارج الصندوق Outside');
+  } else if (pos === 'left') {
+    cat.style.transform = 'translate(-80px, 0px)';
+    txt.innerText = 'The cat is to the LEFT of the box (يسار)';
+    speakText('يسار Left');
+  } else {
+    cat.style.transform = 'translate(80px, 0px)';
+    txt.innerText = 'The cat is to the RIGHT of the box (يمين)';
+    speakText('يمين Right');
+  }
+  addStar();
+}
+
+/* Chapter 3 */
+function randomBeachAdd() {
   const a = Math.floor(Math.random() * 5) + 1;
-  const b = Math.floor(Math.random() * 5);
-  document.getElementById('g1-a').innerText = a;
-  document.getElementById('g1-b').innerText = b;
-  document.getElementById('g1-sum').innerText = a + b;
+  const b = Math.floor(Math.random() * 4) + 1;
+  document.getElementById('add-a').innerText = a;
+  document.getElementById('add-b').innerText = b;
+  document.getElementById('add-sum').innerText = a + b;
+  document.getElementById('beach-icons').innerHTML = `
+    <div>${'🦆'.repeat(a)}</div>
+    <div style="font-size: 24px; color: #0284c7;">➕</div>
+    <div>${'🦆'.repeat(b)}</div>
+  `;
+  speakText(`${a} زائد ${b} يساوي ${a + b}`);
+  addStar();
+}
+
+/* Quiz */
+const g1Quiz = [
+  { q: 'ما العدد التالي بعد 4؟', opts: ['3', '5', '6'], ans: 1 },
+  { q: 'في سباق السيارات، السيارة التي تصل خط النهاية أولاً تكون في المركز:', opts: ['First (الأول)', 'Second (الثاني)', 'Last (الأخير)'], ans: 0 },
+  { q: 'ما ناتج جمع: 5 + 0؟', opts: ['0', '5', '50'], ans: 1 },
+  { q: 'أي زوج يكون العدد 10؟', opts: ['7 + 3', '4 + 4', '5 + 2'], ans: 0 }
+];
+
+function initQuiz() {
+  const box = document.getElementById('g1-quiz-box');
+  box.innerHTML = '';
+  g1Quiz.forEach((it, idx) => {
+    const qDiv = document.createElement('div');
+    qDiv.style.background = '#f8fafc';
+    qDiv.style.border = '1px solid #e2e8f0';
+    qDiv.style.borderRadius = '14px';
+    qDiv.style.padding = '14px';
+    qDiv.style.marginBottom = '12px';
+    qDiv.innerHTML = `<div style="font-weight: 800; color: #ec4899; margin-bottom: 8px;">سؤال ${idx+1}: ${it.q}</div>`;
+    const opts = document.createElement('div');
+    opts.style.display = 'flex'; opts.style.gap = '8px'; opts.style.flexWrap = 'wrap';
+    it.opts.forEach((opt, oIdx) => {
+      const b = document.createElement('button');
+      b.className = 'btn btn-secondary';
+      b.innerText = opt;
+      b.onclick = () => {
+        if (oIdx === it.ans) {
+          b.className = 'btn btn-success';
+          addStar();
+          speakText('إجابة صحيحة يا بطل!');
+        } else {
+          b.style.background = '#ef4444';
+          b.style.color = 'white';
+        }
+      };
+      opts.appendChild(b);
+    });
+    qDiv.appendChild(opts);
+    box.appendChild(qDiv);
+  });
 }
 
 window.addEventListener('DOMContentLoaded', () => {
-  initFrame();
+  initTenFrame();
+  initQuiz();
 });
 </script>
 </body>

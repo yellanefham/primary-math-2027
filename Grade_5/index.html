@@ -4,30 +4,44 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>رياضيات الصف الخامس الابتدائي (ترم أول 2027) | سلاح التلميذ التفاعلي</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
   --primary: #059669;
   --primary-dark: #047857;
   --secondary: #0284c7;
+  --accent-orange: #ea580c;
   --card-bg: #ffffff;
   --text-dark: #1e293b;
-  --radius-lg: 20px;
-  --radius-md: 14px;
+  --text-muted: #64748b;
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --shadow-sm: 0 4px 6px -1px rgba(0,0,0,0.06);
+  --shadow-md: 0 10px 25px -5px rgba(5, 150, 105, 0.15);
 }
-* { margin:0; padding:0; box-sizing:border-box; }
+
+* { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color: transparent; }
+
 body {
   font-family: 'Cairo', system-ui, sans-serif;
   background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 50%, #f0fdfa 100%);
   color: var(--text-dark);
   min-height: 100vh;
   padding-bottom: 60px;
+  overflow-x: hidden;
 }
+
+/* ================= HEADER ================= */
 .header {
-  background: linear-gradient(135deg, #059669 0%, #0d9488 100%);
+  background: linear-gradient(135deg, #059669 0%, #0d9488 50%, #0284c7 100%);
   color: white;
   padding: 18px 24px;
-  box-shadow: 0 8px 20px rgba(5, 150, 105, 0.3);
+  box-shadow: 0 8px 24px rgba(5, 150, 105, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 .header-inner {
   max-width: 1200px;
@@ -38,135 +52,567 @@ body {
   flex-wrap: wrap;
   gap: 12px;
 }
-.hub-bar {
-  background: white; padding: 10px 16px; border-radius: var(--radius-md);
-  margin: 20px auto; max-width: 1200px; display: flex; align-items: center;
-  justify-content: space-between; flex-wrap: wrap; gap: 10px;
+.brand-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
 }
-.hub-tags { display: flex; gap: 8px; flex-wrap: wrap; }
-.hub-tag {
-  background: #f1f5f9; border: 1px solid #cbd5e1; color: #334155;
-  padding: 4px 10px; border-radius: 8px; font-size: 0.82rem; font-weight: 800; text-decoration: none;
+.brand-badge {
+  background: rgba(255,255,255,0.25);
+  border: 2px solid rgba(255,255,255,0.4);
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
 }
-.hub-tag:hover, .hub-tag.active { background: var(--primary); color: white; border-color: var(--primary); }
-.main-wrapper { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
-.chapter-hero {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 20px;
+.brand-text h1 {
+  font-size: 1.35rem;
+  font-weight: 900;
+  line-height: 1.2;
 }
-.chapter-box {
-  background: #f8fafc; border: 2px solid #e2e8f0; border-radius: var(--radius-md);
+.brand-text p {
+  font-size: 0.85rem;
+  opacity: 0.95;
+}
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.score-badge {
+  background: #fef08a;
+  color: #854d0e;
+  border: 2px solid #facc15;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.95rem;
+}
+.pill-btn {
+  background: rgba(255,255,255,0.25);
+  border: 1px solid rgba(255,255,255,0.4);
+  color: white;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.pill-btn:hover { background: rgba(255,255,255,0.4); }
+
+/* ================= TABS ================= */
+.main-wrapper {
+  max-width: 1200px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+.nav-tabs {
+  display: flex;
+  gap: 10px;
+  background: white;
+  padding: 8px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 24px;
+  overflow-x: auto;
+}
+.tab-btn {
+  flex: 1;
+  min-width: 180px;
+  padding: 12px 16px;
+  border: none;
+  background: transparent;
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+  font-family: inherit;
+}
+.tab-btn:hover { background: #ecfdf5; color: var(--primary); }
+.tab-btn.active {
+  background: linear-gradient(135deg, var(--primary) 0%, #0d9488 100%);
+  color: white;
+  box-shadow: 0 6px 16px rgba(5, 150, 105, 0.3);
+}
+
+.tab-pane { display: none; animation: fadeIn 0.3s ease; }
+.tab-pane.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid #d1fae5;
+}
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 2px dashed #a7f3d0;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.card-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.card-title .icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  background: #d1fae5;
+  color: var(--primary);
+}
+.card-title h2 { font-size: 1.3rem; font-weight: 800; }
+.card-title span.sub { font-size: 0.85rem; color: var(--text-muted); display: block; }
+.badge-ch {
+  background: #d1fae5;
+  color: #065f46;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+/* ================= UNIT 1: DECIMALS ================= */
+.decimal-chart {
+  display: flex;
+  gap: 6px;
+  margin: 16px 0;
+  justify-content: center;
+  overflow-x: auto;
+}
+.dec-cell {
+  background: white;
+  border: 2px solid #10b981;
+  border-radius: 12px;
+  padding: 10px 14px;
+  text-align: center;
+  min-width: 80px;
+}
+.dec-cell h5 { font-size: 0.72rem; color: #047857; margin-bottom: 4px; }
+.dec-cell span { font-size: 1.5rem; font-weight: 900; font-family: 'Fredoka', sans-serif; color: #1e293b; }
+.dec-point {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #ea580c;
+  display: flex;
+  align-items: center;
+}
+
+/* ================= UNIT 2: GCF & LCM ================= */
+.factors-bench {
+  background: #f0fdf4;
+  border: 2px solid #bbf7d0;
+  border-radius: var(--radius-md);
   padding: 20px;
+  margin-top: 16px;
+  text-align: center;
 }
-.chapter-box h3 { font-size: 1.15rem; font-weight: 800; color: #065f46; margin-bottom: 6px; }
-.chapter-box p { font-size: 0.88rem; color: #64748b; margin-bottom: 14px; }
+.venn-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.venn-circle {
+  background: white;
+  border: 3px solid #059669;
+  border-radius: 20px;
+  padding: 16px 24px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+
+/* ================= UNIT 3: AREA MODEL ================= */
+.area-model-box {
+  background: white;
+  border: 2px solid #cbd5e1;
+  border-radius: var(--radius-md);
+  padding: 20px;
+  margin-top: 16px;
+}
+.area-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 14px 0;
+  text-align: center;
+}
+.area-table td {
+  border: 2px solid #059669;
+  padding: 12px;
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+/* ================= BUTTONS & SOUND ================= */
 .btn {
-  padding: 8px 16px; border-radius: 10px; font-weight: 800; font-size: 0.88rem;
-  border: none; cursor: pointer; text-decoration: none; display: inline-flex;
-  align-items: center; gap: 6px; font-family: inherit;
+  padding: 10px 20px;
+  border-radius: 14px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  cursor: pointer;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: inherit;
+  transition: all 0.2s ease;
 }
-.btn-primary { background: var(--primary); color: white; }
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary) 0%, #0d9488 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.25);
+}
+.btn-primary:hover { transform: translateY(-2px); }
 .btn-secondary { background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1; }
-/* Decimal interactive display */
-.dec-box {
-  background: white; border: 2px solid #10b981; border-radius: 12px;
-  padding: 14px; text-align: center; margin-top: 10px;
+.btn-success { background: #10b981; color: white; }
+
+.speech-btn {
+  background: #d1fae5;
+  border: 2px solid #a7f3d0;
+  color: #065f46;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
 }
-.area-model-table {
-  width: 100%; border-collapse: collapse; margin-top: 10px; text-align: center;
-}
-.area-model-table td {
-  border: 2px solid #059669; padding: 10px; font-weight: 800; font-size: 0.95rem;
-}
+.speech-btn:hover { transform: scale(1.1); }
+
+#confetti-canvas { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 9999; }
 </style>
 </head>
 <body>
 
+<canvas id="confetti-canvas"></canvas>
+
 <header class="header">
   <div class="header-inner">
-    <div style="display: flex; align-items: center; gap: 12px;">
-      <div style="font-size: 32px; background: rgba(255,255,255,0.2); padding: 6px 12px; border-radius: 12px;">📐</div>
-      <div>
+    <div class="brand-group">
+      <div class="brand-badge">📐</div>
+      <div class="brand-text">
         <h1>رياضيات الصف الخامس الابتدائي (2027)</h1>
         <p>المنهج المطور • الترم الأول • الوحدات 1، 2، 3 (سلاح التلميذ)</p>
       </div>
     </div>
-    <a href="../index.html" class="btn btn-secondary">🏫 بوابة كل الصفوف</a>
+    <div class="header-actions">
+      <div class="score-badge">⭐ النجوم: <span id="star-count">0</span></div>
+      <button class="pill-btn" onclick="toggleAudio()" id="sound-btn">🔊 الصوت: شغال</button>
+    </div>
   </div>
 </header>
 
 <main class="main-wrapper">
-  <div class="hub-bar">
-    <div style="font-weight: 800; font-size: 0.9rem; color: #475569;">
-      📚 مشروعات المراحل الدراسية:
-    </div>
-    <div class="hub-tags">
-      <a href="../Grade_1/index.html" class="hub-tag">الصف 1 (Grade 1)</a>
-      <a href="../Grade_2/index.html" class="hub-tag">الصف 2 (Grade 2)</a>
-      <a href="../Grade_3/index.html" class="hub-tag">الصف 3 (Grade 3)</a>
-      <a href="../Grade_4/index.html" class="hub-tag">الصف 4 (Grade 4)</a>
-      <a href="index.html" class="hub-tag active">الصف 5 (Grade 5)</a>
+
+  <nav class="nav-tabs">
+    <button class="tab-btn active" onclick="switchTab('u1', this)">
+      <span>💎</span> الوحدة 1: الكسور العشرية
+    </button>
+    <button class="tab-btn" onclick="switchTab('u2', this)">
+      <span>🔗</span> الوحدة 2: العلاقات و ع.م.أ
+    </button>
+    <button class="tab-btn" onclick="switchTab('u3', this)">
+      <span>✖️</span> الوحدة 3: نموذج مساحة المستطيل
+    </button>
+    <button class="tab-btn" onclick="switchTab('quiz', this)">
+      <span>🏆</span> Challenge & Quiz
+    </button>
+  </nav>
+
+  <!-- ================= UNIT 1 ================= -->
+  <div id="tab-u1" class="tab-pane active">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">
+          <div class="icon">💎</div>
+          <div>
+            <h2>الوحدة 1: القيمة المكانية للأعداد العشرية وحسابها</h2>
+            <span class="sub">سلاح التلميذ ص 12-65 • الأجزاء من ألف (Thousandths)، المقارنة والتقريب، والعمليات الحسابية</span>
+          </div>
+        </div>
+        <div>
+          <button class="speech-btn" onclick="speakText('مرحباً بكم في الوحدة الأولى للصف الخامس. هنا نتعرف على الكسور العشرية حتى الجزء من الألف وقواعد التقريب والجمع')">🎙️</button>
+          <span class="badge-ch">المفهوم 1 و 2</span>
+        </div>
+      </div>
+
+      <div style="background: white; border: 2px solid #a7f3d0; border-radius: var(--radius-md); padding: 20px; text-align: center;">
+        <h3 style="font-size: 1.1rem; font-weight: 800; color: #047857; margin-bottom: 8px;">
+          📊 جدول القيمة المكانية العشري التفاعلي:
+        </h3>
+        <div class="decimal-chart">
+          <div class="dec-cell" style="background: #eff6ff;"><h5>عشرات (Tens)</h5><span>4</span></div>
+          <div class="dec-cell" style="background: #eff6ff;"><h5>آحاد (Ones)</h5><span>7</span></div>
+          <div class="dec-point">.</div>
+          <div class="dec-cell" style="background: #fef3c7;"><h5>جزء من 10</h5><span>8</span></div>
+          <div class="dec-cell" style="background: #fef3c7;"><h5>جزء من 100</h5><span>2</span></div>
+          <div class="dec-cell" style="background: #fef3c7;"><h5>جزء من 1000</h5><span>5</span></div>
+        </div>
+        <div style="font-size: 1.15rem; font-weight: 900; color: #065f46; margin-top: 10px;">
+          العدد: 47.825 = سبعة وأربعون وثمانمائة وخمسة وعشرون جزءاً من ألف
+        </div>
+        <div style="margin-top: 14px;">
+          <button class="btn btn-primary" onclick="randomRoundTask()">🎲 اختبار التقريب لأقرب جزء من عشرة</button>
+        </div>
+        <div id="round-feedback" style="margin-top: 10px; font-weight: 800; color: #0284c7;"></div>
+      </div>
     </div>
   </div>
 
-  <div class="chapter-hero">
-    <!-- Unit 1 -->
-    <div class="chapter-box">
-      <h3>💎 الوحدة 1: القيمة المكانية للأعداد العشرية</h3>
-      <p>الكسور العشرية حتى جزء من الألف (Thousandths)، تغيير القيم المكانية، المقارنة والتقريب، وجمع وطرح الكسور العشرية.</p>
-      <div class="dec-box">
-        <div style="font-size: 1.8rem; font-weight: 900; color: #047857; font-family: 'Fredoka', 'Cairo', sans-serif;">
-          35.482
+  <!-- ================= UNIT 2 ================= -->
+  <div id="tab-u2" class="tab-pane">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">
+          <div class="icon">🔗</div>
+          <div>
+            <h2>الوحدة 2: العلاقات بين الأعداد (ع.م.أ و م.م.أ)</h2>
+            <span class="sub">سلاح التلميذ ص 66-105 • المعادلات والمتغيرات، تحليل العوامل الأولية، وإيجاد المشتركات</span>
+          </div>
         </div>
-        <div style="font-size: 0.85rem; color: #475569; margin-top: 6px;">
-          3 عشرات + 5 آحاد + 4 أجزاء من عشرة + 8 أجزاء من مائة + 2 جزء من ألف
+        <div>
+          <button class="speech-btn" onclick="speakText('الوحدة الثانية تشرح تحليل الأعداد لعواملها الأولية وإيجاد العامل المشترك الأكبر والمضاعف المشترك الأصغر')">🎙️</button>
+          <span class="badge-ch">المفهوم 1 و 2</span>
+        </div>
+      </div>
+
+      <div class="factors-bench">
+        <h3 style="color: #065f46; font-size: 1.1rem; font-weight: 800; margin-bottom: 8px;">
+          🌳 معمل تحليل العددين 12 و 18:
+        </h3>
+        <div class="venn-wrap">
+          <div class="venn-circle">
+            <h4 style="color: #0284c7;">العوامل الأولية لـ 12</h4>
+            <div style="font-size: 1.3rem; font-weight: 900; margin-top: 4px;">2 × 2 × 3</div>
+          </div>
+          <div class="venn-circle" style="background: #ecfdf5; border-color: #059669;">
+            <h4 style="color: #059669;">المشتركة (ع.م.أ GCF)</h4>
+            <div style="font-size: 1.6rem; font-weight: 900; color: #047857; margin-top: 4px;">2 × 3 = 6</div>
+          </div>
+          <div class="venn-circle">
+            <h4 style="color: #ea580c;">العوامل الأولية لـ 18</h4>
+            <div style="font-size: 1.3rem; font-weight: 900; margin-top: 4px;">2 × 3 × 3</div>
+          </div>
+        </div>
+        <div style="font-size: 1.05rem; font-weight: 800; color: #1e293b;">
+          🌟 المضاعف المشترك الأصغر (م.م.أ LCM) = <strong>36</strong>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Unit 2 -->
-    <div class="chapter-box" style="background: #f0fdf4; border-color: #bbf7d0;">
-      <h3 style="color: #166534;">🔗 الوحدة 2: العلاقات بين الأعداد</h3>
-      <p>التعبيرات والمعادلات الرياضية، المتغيرات، تحليل الأعداد إلى عواملها الأولية، ع.م.أ (GCF) وم.م.أ (LCM).</p>
-      <div style="background: white; border-radius: 12px; padding: 14px; text-align: center; border: 2px solid #86efac;">
-        <div style="font-weight: 800; color: #15803d; margin-bottom: 6px;">مثال تحليلي للعددين 12 و 18:</div>
-        <div style="font-size: 0.95rem; font-weight: 800;">
-          ع.م.أ (العامل المشترك الأكبر) = <strong>6</strong><br>
-          م.م.أ (المضاعف المشترك الأصغر) = <strong>36</strong>
+  <!-- ================= UNIT 3 ================= -->
+  <div id="tab-u3" class="tab-pane">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">
+          <div class="icon">✖️</div>
+          <div>
+            <h2>الوحدة 3: ضرب الأعداد الصحيحة بنموذج مساحة المستطيل</h2>
+            <span class="sub">سلاح التلميذ ص 106-130 • نموذج مساحة المستطيل (Area Model)، التوزيع، والخوارزمية المعيارية</span>
+          </div>
+        </div>
+        <div>
+          <button class="speech-btn" onclick="speakText('الوحدة الثالثة تشرح ضرب عدد مكون من رقمين في رقمين باستخدام نموذج المساحة والتوزيع')">🎙️</button>
+          <span class="badge-ch">الدروس 1 إلى 5</span>
         </div>
       </div>
-    </div>
 
-    <!-- Unit 3 -->
-    <div class="chapter-box" style="background: #eff6ff; border-color: #bfdbfe;">
-      <h3 style="color: #1d4ed8;">✖️ الوحدة 3: ضرب الأعداد الصحيحة</h3>
-      <p>ضرب عدد في رقمين، استخدام نموذج مساحة المستطيل (Area Model)، وخاصية التوزيع والخوارزمية المعيارية.</p>
-      <div style="background: white; border-radius: 12px; padding: 12px; text-align: center; border: 2px solid #93c5fd;">
-        <span style="font-weight: 800; font-size: 0.85rem; color: #1e40af;">نموذج مساحة المستطيل لـ (34 × 25):</span>
-        <table class="area-model-table">
+      <div class="area-model-box">
+        <h3 style="font-size: 1.1rem; font-weight: 800; color: #065f46; margin-bottom: 8px;">
+          📐 نموذج مساحة المستطيل لضرب (43 × 26):
+        </h3>
+        <table class="area-table">
           <tr>
             <td style="background: #f8fafc;">×</td>
-            <td style="background: #e0f2fe;">30</td>
-            <td style="background: #e0f2fe;">4</td>
+            <td style="background: #e0f2fe; color: #0369a1;">40</td>
+            <td style="background: #e0f2fe; color: #0369a1;">3</td>
           </tr>
           <tr>
-            <td style="background: #fef3c7;">20</td>
-            <td>600</td>
-            <td>80</td>
+            <td style="background: #fef3c7; color: #b45309;">20</td>
+            <td style="background: #f0fdf4;">40 × 20 = <strong>800</strong></td>
+            <td style="background: #f0fdf4;">3 × 20 = <strong>60</strong></td>
           </tr>
           <tr>
-            <td style="background: #fef3c7;">5</td>
-            <td>150</td>
-            <td>20</td>
+            <td style="background: #fef3c7; color: #b45309;">6</td>
+            <td style="background: #f0fdf4;">40 × 6 = <strong>240</strong></td>
+            <td style="background: #f0fdf4;">3 × 6 = <strong>18</strong></td>
           </tr>
         </table>
-        <div style="font-size: 0.9rem; font-weight: 900; color: #1e40af; margin-top: 6px;">
-          المجموع الكلي = 600 + 80 + 150 + 20 = <strong>850</strong>
+        <div style="background: #eff6ff; padding: 14px; border-radius: 12px; text-align: center; font-size: 1.2rem; font-weight: 900; color: #1e40af;">
+          الناتج الإجمالي = 800 + 60 + 240 + 18 = <strong>1,118</strong>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- ================= QUIZ ================= -->
+  <div id="tab-quiz" class="tab-pane">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">
+          <div class="icon" style="background: #fef08a; color: #a16207;">🏆</div>
+          <div>
+            <h2>تحدي الأبطال لـ الصف الخامس (Quiz Challenge)</h2>
+            <span class="sub">أسئلة تراكمية على الكسور العشرية والعوامل ونموذج المساحة</span>
+          </div>
+        </div>
+      </div>
+      <div id="g5-quiz-box"></div>
+    </div>
+  </div>
+
 </main>
+
+<script>
+let soundEnabled = true;
+const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+function playTone(freq, dur) {
+  if (!soundEnabled) return;
+  try {
+    const osc = audioCtx.createOscillator();
+    const g = audioCtx.createGain();
+    osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+    g.gain.setValueAtTime(0.2, audioCtx.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + dur);
+    osc.connect(g); g.connect(audioCtx.destination);
+    osc.start(); osc.stop(audioCtx.currentTime + dur);
+  } catch(e) {}
+}
+
+function playSuccess() {
+  playTone(523, 0.12);
+  setTimeout(() => playTone(659, 0.12), 100);
+  setTimeout(() => playTone(783, 0.2), 200);
+}
+
+function toggleAudio() {
+  soundEnabled = !soundEnabled;
+  document.getElementById('sound-btn').innerText = soundEnabled ? '🔊 الصوت: شغال' : '🔇 الصوت: صامت';
+}
+
+function speakText(txt) {
+  if (!('speechSynthesis' in window)) return;
+  window.speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(txt);
+  u.lang = 'ar-SA';
+  u.rate = 0.95;
+  window.speechSynthesis.speak(u);
+}
+
+let stars = 0;
+function addStar() {
+  stars++;
+  document.getElementById('star-count').innerText = stars;
+  playSuccess();
+  launchConfetti();
+}
+
+function launchConfetti() {
+  const c = document.getElementById('confetti-canvas');
+  const ctx = c.getContext('2d');
+  c.width = window.innerWidth; c.height = window.innerHeight;
+  const p = [];
+  for(let i=0; i<50; i++) {
+    p.push({ x: c.width/2, y: c.height/3, vx: (Math.random()-0.5)*12, vy: (Math.random()-0.6)*12, s: Math.random()*8+4, color: '#059669' });
+  }
+  let f = 0;
+  function loop() {
+    ctx.clearRect(0,0,c.width,c.height);
+    p.forEach(it => { it.x += it.vx; it.y += it.vy; it.vy += 0.3; ctx.fillStyle = it.color; ctx.fillRect(it.x, it.y, it.s, it.s); });
+    f++;
+    if (f < 50) requestAnimationFrame(loop);
+    else ctx.clearRect(0,0,c.width,c.height);
+  }
+  loop();
+}
+
+function switchTab(id, btn) {
+  document.querySelectorAll('.tab-pane').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+  document.getElementById(`tab-${id}`).classList.add('active');
+  btn.classList.add('active');
+}
+
+function randomRoundTask() {
+  document.getElementById('round-feedback').innerText = 'قرب العدد 47.825 لأقرب جزء من عشرة: بما أن 2 بخيلة (< 5) فإن الناتج = 47.8';
+  speakText('تقريب 47.825 لأقرب جزء من عشرة يساوي 47.8');
+  addStar();
+}
+
+const g5Quiz = [
+  { q: 'الرقم الموجود في خانة الجزء من مائة في العدد 3.482 هو:', opts: ['4', '8', '2'], ans: 1 },
+  { q: 'العامل المشترك الأكبر (ع.م.أ) للعددين 6 و 9 هو:', opts: ['3', '18', '1'], ans: 0 },
+  { q: 'في نموذج مساحة المستطيل لـ (30 + 4) × 20، ناتج 30 × 20 يساوي:', opts: ['600', '60', '50'], ans: 0 }
+];
+
+function initQuiz() {
+  const box = document.getElementById('g5-quiz-box');
+  box.innerHTML = '';
+  g5Quiz.forEach((it, idx) => {
+    const qDiv = document.createElement('div');
+    qDiv.style.background = '#f0fdf4';
+    qDiv.style.border = '1px solid #bbf7d0';
+    qDiv.style.borderRadius = '14px';
+    qDiv.style.padding = '14px';
+    qDiv.style.marginBottom = '12px';
+    qDiv.innerHTML = `<div style="font-weight: 800; color: #047857; margin-bottom: 8px;">سؤال ${idx+1}: ${it.q}</div>`;
+    const opts = document.createElement('div');
+    opts.style.display = 'flex'; opts.style.gap = '8px'; opts.style.flexWrap = 'wrap';
+    it.opts.forEach((opt, oIdx) => {
+      const b = document.createElement('button');
+      b.className = 'btn btn-secondary';
+      b.innerText = opt;
+      b.onclick = () => {
+        if (oIdx === it.ans) {
+          b.className = 'btn btn-success';
+          addStar();
+          speakText('ممتاز يا بطل الخامس الابتدائي!');
+        } else {
+          b.style.background = '#ef4444';
+          b.style.color = 'white';
+        }
+      };
+      opts.appendChild(b);
+    });
+    qDiv.appendChild(opts);
+    box.appendChild(qDiv);
+  });
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  initQuiz();
+});
+</script>
 </body>
 </html>

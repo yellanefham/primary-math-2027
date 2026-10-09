@@ -15,7 +15,7 @@
   --radius-lg: 20px;
   --radius-md: 14px;
 }
-* { margin:0; padding:0; box-sizing:border-box; }
+* { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color: transparent; }
 body {
   font-family: 'Cairo', system-ui, sans-serif;
   background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #f0fdfa 100%);
@@ -38,18 +38,7 @@ body {
   flex-wrap: wrap;
   gap: 12px;
 }
-.hub-bar {
-  background: white; padding: 10px 16px; border-radius: var(--radius-md);
-  margin: 20px auto; max-width: 1200px; display: flex; align-items: center;
-  justify-content: space-between; flex-wrap: wrap; gap: 10px;
-}
-.hub-tags { display: flex; gap: 8px; flex-wrap: wrap; }
-.hub-tag {
-  background: #f1f5f9; border: 1px solid #cbd5e1; color: #334155;
-  padding: 4px 10px; border-radius: 8px; font-size: 0.82rem; font-weight: 800; text-decoration: none;
-}
-.hub-tag:hover, .hub-tag.active { background: var(--primary); color: white; border-color: var(--primary); }
-.main-wrapper { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
+.main-wrapper { max-width: 1200px; margin: 24px auto; padding: 0 16px; }
 .chapter-hero {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -61,14 +50,6 @@ body {
 }
 .chapter-box h3 { font-size: 1.15rem; font-weight: 800; color: #0369a1; margin-bottom: 6px; }
 .chapter-box p { font-size: 0.88rem; color: #64748b; margin-bottom: 14px; }
-.btn {
-  padding: 8px 16px; border-radius: 10px; font-weight: 800; font-size: 0.88rem;
-  border: none; cursor: pointer; text-decoration: none; display: inline-flex;
-  align-items: center; gap: 6px; font-family: inherit;
-}
-.btn-primary { background: var(--primary); color: white; }
-.btn-secondary { background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1; }
-/* Place Value Chart */
 .pv-chart {
   display: flex; gap: 4px; margin: 12px 0; justify-content: center; overflow-x: auto;
 }
@@ -91,31 +72,17 @@ body {
         <p>المنهج المطور • الترم الأول • Units 1, 2, 3</p>
       </div>
     </div>
-    <a href="../index.html" class="btn btn-secondary">🏫 بوابة كل الصفوف</a>
   </div>
 </header>
 
 <main class="main-wrapper">
-  <div class="hub-bar">
-    <div style="font-weight: 800; font-size: 0.9rem; color: #475569;">
-      📚 مشروعات المراحل الدراسية:
-    </div>
-    <div class="hub-tags">
-      <a href="../Grade_1/index.html" class="hub-tag">الصف 1 (Grade 1)</a>
-      <a href="../Grade_2/index.html" class="hub-tag">الصف 2 (Grade 2)</a>
-      <a href="../Grade_3/index.html" class="hub-tag">الصف 3 (Grade 3)</a>
-      <a href="index.html" class="hub-tag active">الصف 4 (Grade 4)</a>
-      <a href="../Grade_5/index.html" class="hub-tag">الصف 5 (Grade 5)</a>
-    </div>
-  </div>
-
   <div class="chapter-hero">
     <!-- Unit 1 -->
     <div class="chapter-box">
       <h3>🌍 Unit 1: Place Value & Big Numbers</h3>
       <p>الأعداد الكبيرة حتى الملايين والمليارات، الصيغ الممتدة واللفظية، وقواعد التقريب (Rounding).</p>
       <div style="text-align: center;">
-        <span style="font-size: 0.85rem; font-weight: 700;">جدول القيمة المكانية التفاعلي:</span>
+        <span style="font-size: 0.85rem; font-weight: 700;">جدول القيمة المكانية:</span>
         <div class="pv-chart">
           <div class="pv-cell"><h5>M Millions</h5><span>4</span></div>
           <div class="pv-cell"><h5>HTh H.Thousand</h5><span>5</span></div>
