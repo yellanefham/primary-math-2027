@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>كتاب المعاصر ماث — الصف الثالث الابتدائي (ترم أول 2027) | منصة التعلم التفاعلي</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: #6c5ce7;
+  --primary-dark: #5846e0;
+  --secondary: #00cec9;
+  --accent: #fd79a8;
+  --warning: #fdcb6e;
+  --success: #00b894;
+  --danger: #ff7675;
+  --card-bg: #ffffff;
+  --text-dark: #1e293b;
+  --text-muted: #64748b;
+  --radius-lg: 20px;
+  --radius-md: 14px;
+}
+* { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color: transparent; }
+body {
+  font-family: 'Cairo', system-ui, sans-serif;
+  background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 50%, #fdf2f8 100%);
+  color: var(--text-dark);
+  min-height: 100vh;
+  padding-bottom: 60px;
+}
+.header {
+  background: linear-gradient(135deg, #6c5ce7 0%, #8e44ad 100%);
+  color: white;
+  padding: 18px 24px;
+  box-shadow: 0 8px 20px rgba(108, 92, 231, 0.3);
+}
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.brand-group { display: flex; align-items: center; gap: 14px; }
+.brand-icon { font-size: 32px; background: rgba(255,255,255,0.2); padding: 8px 14px; border-radius: 14px; }
+.hub-bar {
+  background: white;
+  padding: 10px 16px;
+  border-radius: var(--radius-md);
+  margin: 20px auto;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.06);
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.hub-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+.hub-tag {
+  background: #f1f5f9; border: 1px solid #cbd5e1; color: #334155;
+  padding: 4px 10px; border-radius: 8px; font-size: 0.82rem; font-weight: 800; text-decoration: none;
+}
+.hub-tag:hover, .hub-tag.active { background: var(--primary); color: white; border-color: var(--primary); }
+.main-wrapper { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 10px 25px -5px rgba(0,0,0,0.08);
+}
+.card-title { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.card-title .icon {
+  width: 44px; height: 44px; border-radius: 12px; display: flex;
+  align-items: center; justify-content: center; font-size: 22px;
+  background: #ede9fe; color: var(--primary);
+}
+.chapter-hero {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+  margin-bottom: 24px;
+}
+.chapter-box {
+  background: #faf5ff;
+  border: 2px solid #e9d5ff;
+  border-radius: var(--radius-md);
+  padding: 20px;
+  position: relative;
+  transition: all 0.25s ease;
+}
+.chapter-box:hover { transform: translateY(-4px); box-shadow: 0 12px 20px -8px rgba(108, 92, 231, 0.2); }
+.chapter-box h3 { font-size: 1.15rem; font-weight: 800; color: #5b21b6; margin-bottom: 6px; }
+.chapter-box p { font-size: 0.88rem; color: #64748b; margin-bottom: 14px; }
+.btn {
+  padding: 8px 16px; border-radius: 10px; font-weight: 800; font-size: 0.88rem;
+  border: none; cursor: pointer; text-decoration: none; display: inline-flex;
+  align-items: center; gap: 6px; font-family: inherit;
+}
+.btn-primary { background: var(--primary); color: white; }
+.btn-primary:hover { background: var(--primary-dark); }
+.btn-secondary { background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1; }
+/* Multiplication Sandbox */
+.mult-grid {
+  display: grid;
+  gap: 6px;
+  margin: 14px 0;
+  justify-content: center;
+}
+.mult-dot {
+  width: 24px; height: 24px; border-radius: 50%;
+  background: #6c5ce7; box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  animation: popIn 0.2s ease;
+}
+@keyframes popIn { from { transform: scale(0); } to { transform: scale(1); } }
+/* Division sharing box */
+.share-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: #ecfeff;
+  border: 2px dashed #06b6d4;
+  border-radius: var(--radius-md);
+  padding: 16px;
+  margin: 16px 0;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.plate {
+  background: white; border: 2px solid #0891b2; border-radius: 50%;
+  width: 90px; height: 90px; display: flex; align-items: center;
+  justify-content: center; flex-wrap: wrap; padding: 6px; gap: 4px;
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="brand-group">
+      <div class="brand-icon">⏰</div>
+      <div>
+        <h1>كتاب المعاصر ماث — الصف الثالث الابتدائي (2027)</h1>
+        <p>المنهج المطور • الترم الأول • Chapters 1, 2, 3</p>
+      </div>
+    </div>
+    <a href="../index.html" class="btn btn-secondary">🏫 بوابة كل الصفوف</a>
+  </div>
+</header>
+
+<main class="main-wrapper">
+  <div class="hub-bar">
+    <div style="font-weight: 800; font-size: 0.9rem; color: #475569;">
+      📚 مشروعات المراحل الدراسية:
+    </div>
+    <div class="hub-tags">
+      <a href="../Grade_1/index.html" class="hub-tag">الصف 1 (Grade 1)</a>
+      <a href="../Grade_2/index.html" class="hub-tag">الصف 2 (Grade 2)</a>
+      <a href="index.html" class="hub-tag active">الصف 3 (Grade 3)</a>
+      <a href="../Grade_4/index.html" class="hub-tag">الصف 4 (Grade 4)</a>
+      <a href="../Grade_5/index.html" class="hub-tag">الصف 5 (Grade 5)</a>
+    </div>
+  </div>
+
+  <div class="chapter-hero">
+    <!-- Chapter 1 -->
+    <div class="chapter-box">
+      <h3>✖️ Chapter 1: Rules of Multiplication</h3>
+      <p>خواص الضرب، المصفوفات (Arrays)، الضرب في 10 و 0، وإيجاد الرقم المجهول.</p>
+      <div style="margin: 10px 0;">
+        <label style="font-weight: 700; font-size: 0.85rem;">اختر المصفوفة:</label>
+        <select id="mult-sel" onchange="updateMult()" style="padding: 4px 8px; border-radius: 6px; font-family: inherit;">
+          <option value="3x4">3 صفوف × 4 أعمدة = 12</option>
+          <option value="4x5">4 صفوف × 5 أعمدة = 20</option>
+          <option value="2x6">2 صفوف × 6 أعمدة = 12</option>
+          <option value="5x3">5 صفوف × 3 أعمدة = 15</option>
+        </select>
+      </div>
+      <div id="mult-render" class="mult-grid"></div>
+      <div id="mult-text" style="font-weight: 800; text-align: center; color: #5b21b6; font-size: 1.05rem;"></div>
+    </div>
+
+    <!-- Chapter 2: The Famous Clock -->
+    <div class="chapter-box" style="background: #fffbeb; border-color: #fde68a;">
+      <h3 style="color: #b45309;">⏰ Chapter 2: Time and Duration</h3>
+      <p>قراءة الساعة العقارب والرقمية، حساب الوقت المنقضي (Elapsed Time)، والوحدات الزمنية الدقيقة.</p>
+      <div style="background: white; border-radius: 12px; padding: 14px; text-align: center; border: 2px solid #f59e0b; margin-bottom: 12px;">
+        <div style="font-size: 32px; margin-bottom: 6px;">🕰️</div>
+        <strong style="color: #92400e;">مشروع م. نبيلة فخري التفاعلي للساعة</strong>
+        <p style="font-size: 0.8rem; color: #78350f; margin-top: 4px;">تطبيق الساعة الشامل مع محاكاة عقارب الدقائق والساعات وحساب الفرق الزمني بدقة.</p>
+      </div>
+      <a href="nabila_clock.html" class="btn btn-primary" style="background: #d97706; width: 100%; justify-content: center;">
+        🚀 فتح تطبيق الساعة الكامل (Ms. Nabila Clock)
+      </a>
+    </div>
+
+    <!-- Chapter 3 -->
+    <div class="chapter-box" style="background: #ecfeff; border-color: #a5f3fc;">
+      <h3 style="color: #0e7490;">➗ Chapter 3: Division Concept</h3>
+      <p>مفهوم القسمة والمشاركة بالتساوي (Equal Sharing)، والعلاقة العكسية بين الضرب والقسمة.</p>
+      <div style="margin: 10px 0;">
+        <label style="font-weight: 700; font-size: 0.85rem;">تقسيم التفاح بالتساوي:</label>
+        <select id="div-sel" onchange="updateDiv()" style="padding: 4px 8px; border-radius: 6px; font-family: inherit;">
+          <option value="12/3">12 تفاحة ÷ 3 أطباق = 4</option>
+          <option value="10/2">10 تفاحات ÷ طبقين = 5</option>
+          <option value="15/3">15 تفاحة ÷ 3 أطباق = 5</option>
+          <option value="8/4">8 تفاحات ÷ 4 أطباق = 2</option>
+        </select>
+      </div>
+      <div id="div-render" class="share-wrap"></div>
+      <div id="div-text" style="font-weight: 800; text-align: center; color: #0891b2; font-size: 1.05rem;"></div>
+    </div>
+  </div>
+</main>
+
+<script>
+function updateMult() {
+  const val = document.getElementById('mult-sel').value;
+  const [r, c] = val.split('x').map(Number);
+  const container = document.getElementById('mult-render');
+  container.style.gridTemplateColumns = `repeat(${c}, 24px)`;
+  container.innerHTML = '';
+  for (let i = 0; i < r * c; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'mult-dot';
+    container.appendChild(dot);
+  }
+  document.getElementById('mult-text').innerText = `${r} × ${c} = ${r * c} (مصفوفة من ${r} صفوف و ${c} أعمدة)`;
+}
+
+function updateDiv() {
+  const val = document.getElementById('div-sel').value;
+  const [total, platesCount] = val.split('/').map(Number);
+  const perPlate = total / platesCount;
+  const container = document.getElementById('div-render');
+  container.innerHTML = '';
+  for (let p = 0; p < platesCount; p++) {
+    const plate = document.createElement('div');
+    plate.className = 'plate';
+    for (let a = 0; a < perPlate; a++) {
+      const apple = document.createElement('span');
+      apple.innerText = '🍎';
+      apple.style.fontSize = '18px';
+      plate.appendChild(apple);
+    }
+    container.appendChild(plate);
+  }
+  document.getElementById('div-text').innerText = `${total} ÷ ${platesCount} = ${perPlate} تفاحات في كل طبق`;
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  updateMult();
+  updateDiv();
+});
+</script>
+</body>
+</html>

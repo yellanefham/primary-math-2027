@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>رياضيات الصف الخامس الابتدائي (ترم أول 2027) | سلاح التلميذ التفاعلي</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: #059669;
+  --primary-dark: #047857;
+  --secondary: #0284c7;
+  --card-bg: #ffffff;
+  --text-dark: #1e293b;
+  --radius-lg: 20px;
+  --radius-md: 14px;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: 'Cairo', system-ui, sans-serif;
+  background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 50%, #f0fdfa 100%);
+  color: var(--text-dark);
+  min-height: 100vh;
+  padding-bottom: 60px;
+}
+.header {
+  background: linear-gradient(135deg, #059669 0%, #0d9488 100%);
+  color: white;
+  padding: 18px 24px;
+  box-shadow: 0 8px 20px rgba(5, 150, 105, 0.3);
+}
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.hub-bar {
+  background: white; padding: 10px 16px; border-radius: var(--radius-md);
+  margin: 20px auto; max-width: 1200px; display: flex; align-items: center;
+  justify-content: space-between; flex-wrap: wrap; gap: 10px;
+}
+.hub-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+.hub-tag {
+  background: #f1f5f9; border: 1px solid #cbd5e1; color: #334155;
+  padding: 4px 10px; border-radius: 8px; font-size: 0.82rem; font-weight: 800; text-decoration: none;
+}
+.hub-tag:hover, .hub-tag.active { background: var(--primary); color: white; border-color: var(--primary); }
+.main-wrapper { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
+.chapter-hero {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+.chapter-box {
+  background: #f8fafc; border: 2px solid #e2e8f0; border-radius: var(--radius-md);
+  padding: 20px;
+}
+.chapter-box h3 { font-size: 1.15rem; font-weight: 800; color: #065f46; margin-bottom: 6px; }
+.chapter-box p { font-size: 0.88rem; color: #64748b; margin-bottom: 14px; }
+.btn {
+  padding: 8px 16px; border-radius: 10px; font-weight: 800; font-size: 0.88rem;
+  border: none; cursor: pointer; text-decoration: none; display: inline-flex;
+  align-items: center; gap: 6px; font-family: inherit;
+}
+.btn-primary { background: var(--primary); color: white; }
+.btn-secondary { background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1; }
+/* Decimal interactive display */
+.dec-box {
+  background: white; border: 2px solid #10b981; border-radius: 12px;
+  padding: 14px; text-align: center; margin-top: 10px;
+}
+.area-model-table {
+  width: 100%; border-collapse: collapse; margin-top: 10px; text-align: center;
+}
+.area-model-table td {
+  border: 2px solid #059669; padding: 10px; font-weight: 800; font-size: 0.95rem;
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <div style="font-size: 32px; background: rgba(255,255,255,0.2); padding: 6px 12px; border-radius: 12px;">📐</div>
+      <div>
+        <h1>رياضيات الصف الخامس الابتدائي (2027)</h1>
+        <p>المنهج المطور • الترم الأول • الوحدات 1، 2، 3 (سلاح التلميذ)</p>
+      </div>
+    </div>
+    <a href="../index.html" class="btn btn-secondary">🏫 بوابة كل الصفوف</a>
+  </div>
+</header>
+
+<main class="main-wrapper">
+  <div class="hub-bar">
+    <div style="font-weight: 800; font-size: 0.9rem; color: #475569;">
+      📚 مشروعات المراحل الدراسية:
+    </div>
+    <div class="hub-tags">
+      <a href="../Grade_1/index.html" class="hub-tag">الصف 1 (Grade 1)</a>
+      <a href="../Grade_2/index.html" class="hub-tag">الصف 2 (Grade 2)</a>
+      <a href="../Grade_3/index.html" class="hub-tag">الصف 3 (Grade 3)</a>
+      <a href="../Grade_4/index.html" class="hub-tag">الصف 4 (Grade 4)</a>
+      <a href="index.html" class="hub-tag active">الصف 5 (Grade 5)</a>
+    </div>
+  </div>
+
+  <div class="chapter-hero">
+    <!-- Unit 1 -->
+    <div class="chapter-box">
+      <h3>💎 الوحدة 1: القيمة المكانية للأعداد العشرية</h3>
+      <p>الكسور العشرية حتى جزء من الألف (Thousandths)، تغيير القيم المكانية، المقارنة والتقريب، وجمع وطرح الكسور العشرية.</p>
+      <div class="dec-box">
+        <div style="font-size: 1.8rem; font-weight: 900; color: #047857; font-family: 'Fredoka', 'Cairo', sans-serif;">
+          35.482
+        </div>
+        <div style="font-size: 0.85rem; color: #475569; margin-top: 6px;">
+          3 عشرات + 5 آحاد + 4 أجزاء من عشرة + 8 أجزاء من مائة + 2 جزء من ألف
+        </div>
+      </div>
+    </div>
+
+    <!-- Unit 2 -->
+    <div class="chapter-box" style="background: #f0fdf4; border-color: #bbf7d0;">
+      <h3 style="color: #166534;">🔗 الوحدة 2: العلاقات بين الأعداد</h3>
+      <p>التعبيرات والمعادلات الرياضية، المتغيرات، تحليل الأعداد إلى عواملها الأولية، ع.م.أ (GCF) وم.م.أ (LCM).</p>
+      <div style="background: white; border-radius: 12px; padding: 14px; text-align: center; border: 2px solid #86efac;">
+        <div style="font-weight: 800; color: #15803d; margin-bottom: 6px;">مثال تحليلي للعددين 12 و 18:</div>
+        <div style="font-size: 0.95rem; font-weight: 800;">
+          ع.م.أ (العامل المشترك الأكبر) = <strong>6</strong><br>
+          م.م.أ (المضاعف المشترك الأصغر) = <strong>36</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- Unit 3 -->
+    <div class="chapter-box" style="background: #eff6ff; border-color: #bfdbfe;">
+      <h3 style="color: #1d4ed8;">✖️ الوحدة 3: ضرب الأعداد الصحيحة</h3>
+      <p>ضرب عدد في رقمين، استخدام نموذج مساحة المستطيل (Area Model)، وخاصية التوزيع والخوارزمية المعيارية.</p>
+      <div style="background: white; border-radius: 12px; padding: 12px; text-align: center; border: 2px solid #93c5fd;">
+        <span style="font-weight: 800; font-size: 0.85rem; color: #1e40af;">نموذج مساحة المستطيل لـ (34 × 25):</span>
+        <table class="area-model-table">
+          <tr>
+            <td style="background: #f8fafc;">×</td>
+            <td style="background: #e0f2fe;">30</td>
+            <td style="background: #e0f2fe;">4</td>
+          </tr>
+          <tr>
+            <td style="background: #fef3c7;">20</td>
+            <td>600</td>
+            <td>80</td>
+          </tr>
+          <tr>
+            <td style="background: #fef3c7;">5</td>
+            <td>150</td>
+            <td>20</td>
+          </tr>
+        </table>
+        <div style="font-size: 0.9rem; font-weight: 900; color: #1e40af; margin-top: 6px;">
+          المجموع الكلي = 600 + 80 + 150 + 20 = <strong>850</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+</body>
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>بوابة المناهج التفاعلية للماث والرياضيات — من Grade 1 إلى Grade 5 (2027)</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Fredoka:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: #4f46e5;
+  --primary-dark: #3730a3;
+  --card-bg: #ffffff;
+  --text-dark: #1e293b;
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --shadow: 0 10px 25px -5px rgba(0,0,0,0.08);
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: 'Cairo', system-ui, sans-serif;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%);
+  color: var(--text-dark);
+  min-height: 100vh;
+  padding-bottom: 60px;
+}
+.header {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #db2777 100%);
+  color: white;
+  padding: 30px 24px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(79, 70, 229, 0.25);
+}
+.header h1 {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+.header p {
+  font-size: 1.05rem;
+  opacity: 0.95;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.main-wrapper {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 16px;
+}
+.intro-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  margin-bottom: 30px;
+  box-shadow: var(--shadow);
+  border: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.intro-text h2 {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 6px;
+}
+.intro-text p {
+  color: #64748b;
+  font-size: 0.92rem;
+}
+.grades-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 24px;
+}
+.grade-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow);
+  border: 2px solid transparent;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+.grade-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 35px -10px rgba(0,0,0,0.15);
+}
+.grade-card.featured {
+  border-color: #818cf8;
+  background: linear-gradient(to bottom, #ffffff 0%, #faf5ff 100%);
+}
+.grade-badge-top {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: #fef08a;
+  color: #854d0e;
+  font-weight: 800;
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid #facc15;
+}
+.card-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+.grade-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.grade-title h3 {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #0f172a;
+}
+.grade-title span {
+  font-size: 0.82rem;
+  color: #64748b;
+  font-weight: 700;
+}
+.chapters-list {
+  list-style: none;
+  margin: 16px 0;
+}
+.chapters-list li {
+  font-size: 0.88rem;
+  padding: 8px 10px;
+  margin-bottom: 6px;
+  border-radius: 8px;
+  background: #f8fafc;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #334155;
+  font-weight: 700;
+}
+.chapters-list li .badge {
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-weight: 800;
+}
+.btn-launch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px;
+  border-radius: 14px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: white;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  margin-top: 10px;
+}
+.btn-launch:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <h1>بوابة مشاريع المناهج التفاعلية — ماث ورياضيات 2027</h1>
+  <p>منظومة تعليمية متكاملة مقسمة لكل صف دراسي (من Grade 1 إلى Grade 5) طبقاً لكتب المعاصر وسلاح التلميذ 2027 مع شرح تفاعلي لـ Chapters 1, 2, 3</p>
+</header>
+
+<main class="main-wrapper">
+  <div class="intro-card">
+    <div class="intro-text">
+      <h2>مرحباً بكم في شبكة مشاريع المراحل الدراسية</h2>
+      <p>تم استخراج وتدقيق المناهج من كتب 2027 المتوفرة في <code>D:\math\2027</code> وتقسيمها إلى مشاريع مستقلة لكل صف مع نماذج تفاعلية حية ومحاكاة عملية للمفاهيم.</p>
+    </div>
+  </div>
+
+  <div class="grades-grid">
+
+    <!-- GRADE 1 -->
+    <div class="grade-card">
+      <div>
+        <div class="card-head">
+          <div class="grade-icon" style="background: #fdf2f8; color: #ec4899;">🎈</div>
+          <div class="grade-title">
+            <h3>Grade 1 (الأول الابتدائي)</h3>
+            <span>كتاب المعاصر ماث 1ب 2027</span>
+          </div>
+        </div>
+        <ul class="chapters-list">
+          <li><span class="badge" style="background: #fce7f3; color: #be185d;">Ch 1</span> Numbers up to 10 & Ten-Frame</li>
+          <li><span class="badge" style="background: #fce7f3; color: #be185d;">Ch 2</span> What's the position? (Inside/Outside)</li>
+          <li><span class="badge" style="background: #fce7f3; color: #be185d;">Ch 3</span> Addition Concepts up to 10</li>
+        </ul>
+      </div>
+      <a href="Grade_1/index.html" class="btn-launch" style="background: #ec4899;">
+        🚀 فتح مشروع Grade 1 التفاعلي
+      </a>
+    </div>
+
+    <!-- GRADE 2 (FEATURED) -->
+    <div class="grade-card featured">
+      <div class="grade-badge-top">🌟 المشروع الرئيسي الجديد</div>
+      <div>
+        <div class="card-head">
+          <div class="grade-icon" style="background: #ede9fe; color: #4f46e5;">🦊</div>
+          <div class="grade-title">
+            <h3>Grade 2 (الثاني الابتدائي)</h3>
+            <span>كتاب المعاصر ماث 2ب 2027 (مفصل وشامل)</span>
+          </div>
+        </div>
+        <ul class="chapters-list">
+          <li><span class="badge" style="background: #e0e7ff; color: #3730a3;">Ch 1</span> Graphs & Charts (استطلاع الألعاب والأعمدة)</li>
+          <li><span class="badge" style="background: #e0e7ff; color: #3730a3;">Ch 2</span> Vertical Addition & Regrouping (+1)</li>
+          <li><span class="badge" style="background: #e0e7ff; color: #3730a3;">Ch 3</span> Vertical Subtraction & Checking with Addition</li>
+        </ul>
+      </div>
+      <a href="Grade_2/index.html" class="btn-launch" style="background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);">
+        🎯 فتح تطبيق Grade 2 المتكامل بالتفصيل
+      </a>
+    </div>
+
+    <!-- GRADE 3 -->
+    <div class="grade-card">
+      <div class="grade-badge-top" style="background: #dbeafe; color: #1e40af; border-color: #93c5fd;">🕰️ يحتوي ساعة مس نبيلة</div>
+      <div>
+        <div class="card-head">
+          <div class="grade-icon" style="background: #faf5ff; color: #7c3aed;">⏰</div>
+          <div class="grade-title">
+            <h3>Grade 3 (الثالث الابتدائي)</h3>
+            <span>كتاب المعاصر ماث 3ب 2027</span>
+          </div>
+        </div>
+        <ul class="chapters-list">
+          <li><span class="badge" style="background: #ede9fe; color: #5b21b6;">Ch 1</span> Rules of Multiplication & Arrays</li>
+          <li><span class="badge" style="background: #ede9fe; color: #5b21b6;">Ch 2</span> Time & Duration (مشروع الساعة الشامل)</li>
+          <li><span class="badge" style="background: #ede9fe; color: #5b21b6;">Ch 3</span> Division & Sharing Equally</li>
+        </ul>
+      </div>
+      <a href="Grade_3/index.html" class="btn-launch" style="background: #7c3aed;">
+        🚀 فتح مشروع Grade 3 التفاعلي
+      </a>
+    </div>
+
+    <!-- GRADE 4 -->
+    <div class="grade-card">
+      <div>
+        <div class="card-head">
+          <div class="grade-icon" style="background: #e0f2fe; color: #0284c7;">🚀</div>
+          <div class="grade-title">
+            <h3>Grade 4 (الرابع الابتدائي)</h3>
+            <span>كتاب المعاصر ماث 4ب 2027</span>
+          </div>
+        </div>
+        <ul class="chapters-list">
+          <li><span class="badge" style="background: #e0f2fe; color: #0369a1;">Unit 1</span> Place Value & Big Numbers (Millions)</li>
+          <li><span class="badge" style="background: #e0f2fe; color: #0369a1;">Unit 2</span> Addition/Subtraction & Bar Models</li>
+          <li><span class="badge" style="background: #e0f2fe; color: #0369a1;">Unit 3</span> Concepts of Metric Measurement</li>
+        </ul>
+      </div>
+      <a href="Grade_4/index.html" class="btn-launch" style="background: #0284c7;">
+        🚀 فتح مشروع Grade 4 التفاعلي
+      </a>
+    </div>
+
+    <!-- GRADE 5 -->
+    <div class="grade-card">
+      <div>
+        <div class="card-head">
+          <div class="grade-icon" style="background: #ecfdf5; color: #059669;">📐</div>
+          <div class="grade-title">
+            <h3>Grade 5 (الخامس الابتدائي)</h3>
+            <span>كتاب سلاح التلميذ رياضيات 5ب 2027</span>
+          </div>
+        </div>
+        <ul class="chapters-list">
+          <li><span class="badge" style="background: #d1fae5; color: #065f46;">الوحدة 1</span> القيمة المكانية للأعداد العشرية وحسابها</li>
+          <li><span class="badge" style="background: #d1fae5; color: #065f46;">الوحدة 2</span> العلاقات بين الأعداد والعوامل والمضاعفات</li>
+          <li><span class="badge" style="background: #d1fae5; color: #065f46;">الوحدة 3</span> ضرب الأعداد الصحيحة ونموذج المساحة</li>
+        </ul>
+      </div>
+      <a href="Grade_5/index.html" class="btn-launch" style="background: #059669;">
+        🚀 فتح مشروع Grade 5 التفاعلي
+      </a>
+    </div>
+
+  </div>
+</main>
+</body>
+</html>

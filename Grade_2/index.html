@@ -1,0 +1,2013 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>كتاب المعاصر ماث — الصف الثاني الابتدائي (ترم أول 2027) | منصة التعلم التفاعلي</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: #4f46e5;
+  --primary-light: #818cf8;
+  --primary-dark: #3730a3;
+  --secondary: #06b6d4;
+  --accent-pink: #ec4899;
+  --accent-orange: #f97316;
+  --accent-yellow: #fbbf24;
+  --success: #10b981;
+  --danger: #ef4444;
+  --tens-color: #2563eb;
+  --ones-color: #ea580c;
+  --bg-gradient: linear-gradient(135deg, #f0fdf4 0%, #e0f2fe 50%, #fdf4ff 100%);
+  --card-bg: #ffffff;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-sm: 10px;
+  --shadow-sm: 0 4px 6px -1px rgba(0,0,0,0.07);
+  --shadow-md: 0 10px 25px -5px rgba(0,0,0,0.1);
+  --shadow-lg: 0 20px 30px -10px rgba(79, 70, 229, 0.2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: 'Cairo', system-ui, sans-serif;
+  background: var(--bg-gradient);
+  color: var(--text-main);
+  min-height: 100vh;
+  line-height: 1.6;
+  padding-bottom: 60px;
+  overflow-x: hidden;
+}
+
+/* ================= HEADER ================= */
+.header {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #db2777 100%);
+  color: white;
+  padding: 18px 24px;
+  box-shadow: 0 8px 24px rgba(79, 70, 229, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.brand-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.brand-badge {
+  background: rgba(255,255,255,0.2);
+  border: 2px solid rgba(255,255,255,0.4);
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.brand-text h1 {
+  font-size: 1.35rem;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+.brand-text p {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.pill-btn {
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.35);
+  color: white;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+.pill-btn:hover {
+  background: rgba(255,255,255,0.35);
+  transform: translateY(-2px);
+}
+.score-badge {
+  background: #fef08a;
+  color: #854d0e;
+  border: 2px solid #facc15;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* ================= CONTAINER & NAVIGATION TABS ================= */
+.main-wrapper {
+  max-width: 1200px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+.nav-tabs {
+  display: flex;
+  gap: 10px;
+  background: white;
+  padding: 8px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 24px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.nav-tabs::-webkit-scrollbar { display: none; }
+
+.tab-btn {
+  flex: 1;
+  min-width: 170px;
+  padding: 12px 16px;
+  border: none;
+  background: transparent;
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+  font-family: inherit;
+}
+.tab-btn:hover {
+  background: #f1f5f9;
+  color: var(--primary);
+}
+.tab-btn.active {
+  background: linear-gradient(135deg, var(--primary) 0%, #6366f1 100%);
+  color: white;
+  box-shadow: 0 6px 16px rgba(79, 70, 229, 0.3);
+}
+
+/* ================= CONTENT SECTIONS ================= */
+.tab-pane {
+  display: none;
+  animation: fadeIn 0.35s ease;
+}
+.tab-pane.active {
+  display: block;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 2px dashed #f1f5f9;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.card-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.card-title .icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  background: #ede9fe;
+  color: var(--primary);
+}
+.card-title h2 {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+.card-title span.sub {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+.badge-ch {
+  background: #e0e7ff;
+  color: #3730a3;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+/* ================= CHAPTER 1: GRAPHS & CHARTS ================= */
+.survey-board {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 24px;
+}
+@media (max-width: 900px) {
+  .survey-board { grid-template-columns: 1fr; }
+}
+
+.toys-collection {
+  background: #f8fafc;
+  border: 2px dashed #cbd5e1;
+  border-radius: var(--radius-md);
+  padding: 18px;
+}
+.toys-header {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.toys-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(56px, 1fr));
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.toy-card {
+  background: white;
+  border: 2px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 8px 4px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+  position: relative;
+  box-shadow: var(--shadow-sm);
+}
+.toy-card:hover {
+  transform: scale(1.08);
+  border-color: var(--primary);
+}
+.toy-card.counted {
+  opacity: 0.35;
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+  pointer-events: none;
+}
+.toy-card.counted::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 26px;
+  font-weight: 900;
+  color: var(--success);
+}
+.toy-card .toy-emoji { font-size: 26px; display: block; }
+.toy-card .toy-name { font-size: 0.72rem; font-weight: 700; color: #475569; }
+
+/* The Vertical Graph (Bottom-Up) */
+.graph-container {
+  background: white;
+  border: 2px solid #e2e8f0;
+  border-radius: var(--radius-md);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+}
+.graph-title {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.graph-body {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  height: 280px;
+  border-bottom: 3px solid #334155;
+  border-left: 3px solid #334155;
+  padding: 0 10px 0 10px;
+  position: relative;
+  background: repeating-linear-gradient(
+    to top,
+    rgba(241, 245, 249, 0.6) 0px,
+    rgba(241, 245, 249, 0.6) 27px,
+    #e2e8f0 27px,
+    #e2e8f0 28px
+  );
+}
+.graph-y-axis {
+  position: absolute;
+  left: -28px;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #64748b;
+}
+.graph-col {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  width: 16%;
+  gap: 3px;
+  position: relative;
+}
+.graph-cell {
+  width: 100%;
+  height: 25px;
+  border-radius: 6px;
+  border: 2px solid transparent;
+  background: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.graph-cell.filled {
+  border-color: rgba(0,0,0,0.1);
+  box-shadow: inset 0 2px 4px rgba(255,255,255,0.4);
+}
+.graph-cell.filled.c-kite { background: #38bdf8; }
+.graph-cell.filled.c-bicycle { background: #f43f5e; }
+.graph-cell.filled.c-doll { background: #ec4899; }
+.graph-cell.filled.c-ball { background: #10b981; }
+.graph-cell.filled.c-car { background: #f59e0b; }
+
+.graph-x-labels {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 10px;
+}
+.x-label-item {
+  width: 16%;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #334155;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+/* Frequency Table / Chart */
+.chart-table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 2px solid #cbd5e1;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.chart-table th, .chart-table td {
+  padding: 10px;
+  text-align: center;
+  font-size: 0.88rem;
+  border-bottom: 1px solid #e2e8f0;
+  border-right: 1px solid #e2e8f0;
+}
+.chart-table th:last-child, .chart-table td:last-child { border-right: none; }
+.chart-table tr:last-child td { border-bottom: none; }
+.chart-table th { background: #f8fafc; font-weight: 800; color: #475569; }
+.chart-table td.val-cell { font-size: 1.15rem; font-weight: 900; color: var(--primary); }
+
+/* Interactive Q&A for Chapter 1 */
+.qa-box {
+  background: #f0fdf4;
+  border: 2px solid #bbf7d0;
+  border-radius: var(--radius-md);
+  padding: 20px;
+  margin-top: 24px;
+}
+.qa-item {
+  background: white;
+  border-radius: 12px;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  border: 1px solid #dcfce7;
+}
+.qa-item:last-child { margin-bottom: 0; }
+.qa-question {
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: #166534;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.qa-options {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.opt-btn {
+  border: 2px solid #e2e8f0;
+  background: #f8fafc;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+.opt-btn:hover { border-color: var(--primary); background: #e0e7ff; }
+.opt-btn.correct { background: #10b981 !important; color: white !important; border-color: #059669 !important; }
+.opt-btn.wrong { background: #ef4444 !important; color: white !important; border-color: #dc2626 !important; }
+
+/* ================= CHAPTER 2: VERTICAL ADDITION ================= */
+.addition-workspace {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 24px;
+}
+@media (max-width: 900px) {
+  .addition-workspace { grid-template-columns: 1fr; }
+}
+
+.vertical-grid-card {
+  background: #faf5ff;
+  border: 2px solid #e9d5ff;
+  border-radius: var(--radius-md);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.vertical-calc-table {
+  border-collapse: separate;
+  border-spacing: 0;
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 3px solid #8b5cf6;
+  width: 260px;
+}
+.vertical-calc-table th {
+  padding: 10px;
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: white;
+  text-align: center;
+}
+.th-tens { background: var(--tens-color); }
+.th-ones { background: var(--ones-color); }
+.vertical-calc-table td {
+  padding: 12px;
+  text-align: center;
+  font-size: 2rem;
+  font-family: 'Fredoka', 'Cairo', sans-serif;
+  font-weight: 700;
+  border-bottom: 1px solid #f1f5f9;
+}
+.td-tens { background: #eff6ff; color: var(--tens-color); border-right: 2px dashed #cbd5e1; }
+.td-ones { background: #fff7ed; color: var(--ones-color); }
+.carry-row td {
+  padding: 4px;
+  font-size: 1rem;
+}
+.carry-box {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 2px dashed #94a3b8;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: #dc2626;
+  background: #fef2f2;
+  transition: all 0.3s ease;
+}
+.carry-box.active {
+  border: 2px solid #dc2626;
+  background: #fee2e2;
+  transform: scale(1.15);
+  box-shadow: 0 0 10px rgba(220, 38, 38, 0.4);
+}
+.op-sign {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #8b5cf6;
+  margin-right: -24px;
+}
+.result-row td {
+  border-top: 4px solid #8b5cf6;
+  background: #fdf4ff;
+  font-size: 2.3rem;
+  font-weight: 900;
+  color: #6b21a8;
+}
+
+/* Base-10 Blocks Visualization */
+.blocks-visual-card {
+  background: white;
+  border: 2px solid #e2e8f0;
+  border-radius: var(--radius-md);
+  padding: 20px;
+}
+.blocks-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  min-height: 220px;
+}
+.block-column {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.block-column-title {
+  font-weight: 800;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+.title-tens { background: #dbeafe; color: #1e40af; }
+.title-ones { background: #ffedd5; color: #9a3412; }
+.blocks-holder {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  width: 100%;
+}
+/* Rod for 10 */
+.ten-rod {
+  width: 18px;
+  height: 90px;
+  background: linear-gradient(to bottom, #3b82f6 0%, #1d4ed8 100%);
+  border: 2px solid #1e3a8a;
+  border-radius: 4px;
+  position: relative;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.15);
+  background-size: 100% 9px;
+  background-image: repeating-linear-gradient(to bottom, transparent 0px, transparent 8px, #1e3a8a 8px, #1e3a8a 9px);
+}
+/* Unit for 1 */
+.one-unit {
+  width: 18px;
+  height: 18px;
+  background: linear-gradient(135deg, #fb923c 0%, #ea580c 100%);
+  border: 2px solid #9a3412;
+  border-radius: 4px;
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.15);
+}
+
+.stepper-controls {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.step-info-box {
+  background: #eff6ff;
+  border: 2px solid #bfdbfe;
+  border-radius: 12px;
+  padding: 12px 18px;
+  margin-top: 14px;
+  text-align: center;
+  font-weight: 800;
+  color: #1e40af;
+  font-size: 1.05rem;
+  width: 100%;
+}
+
+/* Commutative Property Interactive Balance */
+.balance-card {
+  background: #fffbeb;
+  border: 2px solid #fde68a;
+  border-radius: var(--radius-md);
+  padding: 24px;
+  margin-top: 24px;
+}
+.balance-animation-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+.balance-box {
+  background: white;
+  border: 3px solid #f59e0b;
+  border-radius: 18px;
+  padding: 16px 26px;
+  font-size: 1.8rem;
+  font-weight: 900;
+  font-family: 'Fredoka', 'Cairo', sans-serif;
+  color: #b45309;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.balance-equal {
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: #10b981;
+}
+
+/* ================= CHAPTER 3: VERTICAL SUBTRACTION ================= */
+.subtraction-workspace {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 24px;
+}
+@media (max-width: 900px) {
+  .subtraction-workspace { grid-template-columns: 1fr; }
+}
+
+.borrow-badge {
+  background: #fee2e2;
+  border: 2px solid #ef4444;
+  color: #b91c1c;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 900;
+  margin-top: 4px;
+}
+
+/* Fact Family / Relation Bot */
+.relation-card {
+  background: #ecfdf5;
+  border: 2px solid #a7f3d0;
+  border-radius: var(--radius-md);
+  padding: 24px;
+  margin-top: 24px;
+}
+.fact-triangle {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 16px;
+}
+.fact-bubble {
+  background: white;
+  border-radius: 20px;
+  padding: 16px 24px;
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+  border: 2px solid #6ee7b7;
+}
+.fact-bubble h4 {
+  font-size: 0.85rem;
+  color: #065f46;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.fact-bubble .val {
+  font-size: 2rem;
+  font-weight: 900;
+  font-family: 'Fredoka', 'Cairo', sans-serif;
+  color: #047857;
+}
+
+.checker-bot-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+  background: white;
+  padding: 18px;
+  border-radius: 16px;
+  border: 2px dashed #059669;
+  flex-wrap: wrap;
+}
+
+/* ================= BUTTONS & GENERAL UTILS ================= */
+.btn {
+  padding: 10px 20px;
+  border-radius: 14px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  cursor: pointer;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  user-select: none;
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary) 0%, #6366f1 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(79, 70, 229, 0.35);
+}
+.btn-secondary {
+  background: #f1f5f9;
+  color: #334155;
+  border: 2px solid #cbd5e1;
+}
+.btn-secondary:hover { background: #e2e8f0; }
+.btn-success {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+}
+.btn-accent {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: white;
+}
+
+.speech-btn {
+  background: #f3e8ff;
+  border: 2px solid #d8b4fe;
+  color: #7e22ce;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 16px;
+}
+.speech-btn:hover { background: #e9d5ff; transform: scale(1.1); }
+
+/* Confetti Canvas */
+#confetti-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Certificate Modal */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+.modal-overlay.active { display: flex; }
+.modal-content {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 30px;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+  border: 4px solid #facc15;
+}
+.cert-icon { font-size: 60px; margin-bottom: 12px; }
+.cert-title { font-size: 1.6rem; font-weight: 900; color: #1e293b; margin-bottom: 8px; }
+.cert-body { font-size: 1rem; color: #475569; margin-bottom: 20px; }
+
+/* Hub quick switcher */
+.hub-link-bar {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid #cbd5e1;
+  border-radius: var(--radius-md);
+  padding: 10px 16px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.hub-tags {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.hub-tag {
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: #334155;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.hub-tag:hover, .hub-tag.active {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+</style>
+</head>
+<body>
+
+<canvas id="confetti-canvas"></canvas>
+
+<!-- ================= HEADER ================= -->
+<header class="header">
+  <div class="header-inner">
+    <div class="brand-group">
+      <div class="brand-badge">🦊</div>
+      <div class="brand-text">
+        <h1>كتاب المعاصر ماث — الصف الثاني الابتدائي (2027)</h1>
+        <p>المنهج الجديد المطور • الترم الأول • Chapters 1, 2, 3</p>
+      </div>
+    </div>
+    <div class="header-actions">
+      <div class="score-badge" id="score-display">⭐ النجوم: <span id="star-count">0</span></div>
+      <button class="pill-btn" onclick="toggleAudio()" id="sound-btn">🔊 الصوت: شغال</button>
+      <a href="../index.html" class="pill-btn">🏫 بوابة كل الصفوف</a>
+    </div>
+  </div>
+</header>
+
+<main class="main-wrapper">
+
+  <!-- ================= GRADES NAV BAR ================= -->
+  <div class="hub-link-bar">
+    <div style="font-weight: 800; font-size: 0.9rem; color: #475569;">
+      📚 الانتقال السريع بين المشروعات:
+    </div>
+    <div class="hub-tags">
+      <a href="../Grade_1/index.html" class="hub-tag">الصف 1 (Grade 1)</a>
+      <a href="index.html" class="hub-tag active">الصف 2 (Grade 2)</a>
+      <a href="../Grade_3/index.html" class="hub-tag">الصف 3 (Grade 3)</a>
+      <a href="../Grade_4/index.html" class="hub-tag">الصف 4 (Grade 4)</a>
+      <a href="../Grade_5/index.html" class="hub-tag">الصف 5 (Grade 5)</a>
+    </div>
+  </div>
+
+  <!-- ================= TABS ================= -->
+  <nav class="nav-tabs">
+    <button class="tab-btn active" onclick="switchTab('ch1', this)">
+      <span>📊</span> Chapter 1: Graphs & Charts
+    </button>
+    <button class="tab-btn" onclick="switchTab('ch2', this)">
+      <span>➕</span> Chapter 2: Vertical Addition
+    </button>
+    <button class="tab-btn" onclick="switchTab('ch3', this)">
+      <span>➖</span> Chapter 3: Vertical Subtraction
+    </button>
+    <button class="tab-btn" onclick="switchTab('quiz', this)">
+      <span>🏆</span> Challenge & Quiz
+    </button>
+  </nav>
+
+  <!-- ============================================================== -->
+  <!-- TAB 1: CHAPTER 1 (GRAPHS AND CHARTS) -->
+  <!-- ============================================================== -->
+  <div id="tab-ch1" class="tab-pane active">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">
+          <div class="icon">📊</div>
+          <div>
+            <h2>Chapter 1: Graphs and Charts</h2>
+            <span class="sub">كتاب المعاصر ص 14-25 • استطلاع الألعاب والتمثيل البياني وقراءة البيانات</span>
+          </div>
+        </div>
+        <div>
+          <button class="speech-btn" onclick="speakText('مرحباً بك يا بطل في الشابتر الأول: الرسوم البيانية والجداول. هنا سنتعلم كيف نجمع البيانات ونمثلها في أعمدة من أسفل إلى أعلى ونقارن بينها.')" title="استمع للشرح">🎙️</button>
+          <span class="badge-ch">Lessons 1, 2 & 3</span>
+        </div>
+      </div>
+
+      <p style="font-size: 0.98rem; color: #475569; margin-bottom: 18px;">
+        💡 <strong>الفكرة الأساسية (Concept):</strong> الرسوم البيانية (Graphs) تساعدنا على تنظيم البيانات بوضوح لنعرف بنظرة واحدة الأكثر (Most) والأقل (Least)! 
+        اضغط على كل لعبة في الصندوق لتسجيلها ومشاهدة العمود يرتفع من الأسفل إلى الأعلى.
+      </p>
+
+      <div class="survey-board">
+        <!-- Collection Box -->
+        <div class="toys-collection">
+          <div class="toys-header">
+            <span>🧸 بطاقات الألعاب في الفصل (اضغط للعد):</span>
+            <button class="btn btn-secondary" style="padding: 4px 10px; font-size: 0.78rem;" onclick="resetCh1Survey()">🔄 إعادة التعيين</button>
+          </div>
+          <div class="toys-grid" id="toys-grid-container">
+            <!-- Rendered by JS -->
+          </div>
+          <div style="font-size: 0.82rem; color: #64748b; background: white; padding: 10px; border-radius: 8px;">
+            📌 <strong>توجيه للمعلم / ولي الأمر:</strong> كلما ضغط الطفل على لعبة، يتم تظليل دائرة في العمود المقابل لها من الأسفل، تماماً كما في تدريب صفحة 14 بكتاب المعاصر.
+          </div>
+        </div>
+
+        <!-- The Live Graph -->
+        <div class="graph-container">
+          <div class="graph-title">
+            <span>Favorite Toys (الألعاب المفضلة)</span>
+          </div>
+          
+          <div class="graph-body" id="graph-body">
+            <div class="graph-y-axis">
+              <span>10</span><span>9</span><span>8</span><span>7</span><span>6</span><span>5</span><span>4</span><span>3</span><span>2</span><span>1</span>
+            </div>
+            <!-- Columns: Kite, Bicycle, Doll, Ball, Car -->
+            <div class="graph-col" id="col-kite"></div>
+            <div class="graph-col" id="col-bicycle"></div>
+            <div class="graph-col" id="col-doll"></div>
+            <div class="graph-col" id="col-ball"></div>
+            <div class="graph-col" id="col-car"></div>
+          </div>
+
+          <div class="graph-x-labels">
+            <div class="x-label-item"><span>🪁</span><span>Kite</span></div>
+            <div class="x-label-item"><span>🚲</span><span>Bicycle</span></div>
+            <div class="x-label-item"><span>🪆</span><span>Doll</span></div>
+            <div class="x-label-item"><span>⚽</span><span>Ball</span></div>
+            <div class="x-label-item"><span>🚗</span><span>Car</span></div>
+          </div>
+
+          <!-- Frequency Table -->
+          <table class="chart-table">
+            <thead>
+              <tr>
+                <th>Favorite Toy</th>
+                <th>🪁 Kite</th>
+                <th>🚲 Bicycle</th>
+                <th>🪆 Doll</th>
+                <th>⚽ Ball</th>
+                <th>🚗 Car</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-weight: 800;">Number of Students</td>
+                <td class="val-cell" id="count-kite">0</td>
+                <td class="val-cell" id="count-bicycle">0</td>
+                <td class="val-cell" id="count-doll">0</td>
+                <td class="val-cell" id="count-ball">0</td>
+                <td class="val-cell" id="count-car">0</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Interactive Q&A (El-Moasser Page 15 Analysis) -->
+      <div class="qa-box">
+        <h3 style="font-size: 1.15rem; font-weight: 800; color: #166534; margin-bottom: 14px; display: flex; align-items: center; gap: 8px;">
+          <span>🎯</span> أسئلة قراءة الرسم البياني (Let's Read & Compare Graphs):
+        </h3>
+        
+        <div class="qa-item">
+          <div class="qa-question">
+            <span>1️⃣</span> ما هي اللعبة الأكثر تفضيلاً (The most favorite toy)؟
+          </div>
+          <div class="qa-options" id="q1-opts">
+            <button class="opt-btn" onclick="checkCh1Answer(this, false, 'q1')">Kite 🪁</button>
+            <button class="opt-btn" onclick="checkCh1Answer(this, true, 'q1')">Bicycle 🚲 (9 طلاب)</button>
+            <button class="opt-btn" onclick="checkCh1Answer(this, false, 'q1')">Car 🚗</button>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-question">
+            <span>2️⃣</span> ما هي اللعبة الأقل تفضيلاً (The least favorite toy)؟
+          </div>
+          <div class="qa-options" id="q2-opts">
+            <button class="opt-btn" onclick="checkCh1Answer(this, true, 'q2')">Car 🚗 (طالبان فقط)</button>
+            <button class="opt-btn" onclick="checkCh1Answer(this, false, 'q2')">Ball ⚽</button>
+            <button class="opt-btn" onclick="checkCh1Answer(this, false, 'q2')">Doll 🪆</button>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-question">
+            <span>3️⃣</span> اللعبتان اللتان يفضلهما نفس العدد من الطلاب (Equal in number) هما:
+          </div>
+          <div class="qa-options" id="q3-opts">
+            <button class="opt-btn" onclick="checkCh1Answer(this, false, 'q3')">Bicycle & Kite</button>
+            <button class="opt-btn" onclick="checkCh1Answer(this, true, 'q3')">Doll & Ball 🪆⚽ (4 طلاب لكل منهما)</button>
+            <button class="opt-btn" onclick="checkCh1Answer(this, false, 'q3')">Car & Kite</button>
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="qa-question">
+            <span>4️⃣</span> ما مجموع الطلاب الذين يفضلون العروسة والسيارة معا (Total of Doll and Car: 4 + 2)؟
+          </div>
+          <div class="qa-options" id="q4-opts">
+            <button class="opt-btn" onclick="checkCh1Answer(this, false, 'q4')">5</button>
+            <button class="opt-btn" onclick="checkCh1Answer(this, true, 'q4')">6 طلاب (4 + 2 = 6)</button>
+            <button class="opt-btn" onclick="checkCh1Answer(this, false, 'q4')">7</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- TAB 2: CHAPTER 2 (VERTICAL ADDITION) -->
+  <!-- ============================================================== -->
+  <div id="tab-ch2" class="tab-pane">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">
+          <div class="icon">➕</div>
+          <div>
+            <h2>Chapter 2: Vertical Addition & Regrouping</h2>
+            <span class="sub">كتاب المعاصر ص 32-55 • الجمع الرأسي، جدول القيمة المكانية، إعادة التجميع، وخاصية الإبدال</span>
+          </div>
+        </div>
+        <div>
+          <button class="speech-btn" onclick="speakText('في الشابتر الثاني نتعلم الجمع الرأسي، نرتب الآحاد تحت الآحاد والعشرات تحت العشرات، ونبدأ دائما بجمع الآحاد أولا ثم العشرات')" title="استمع للشرح">🎙️</button>
+          <span class="badge-ch">Lessons 1 to 5</span>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap;">
+        <button class="btn btn-primary" onclick="setAdditionMode('simple')" id="btn-add-simple">✨ 1. جمع بدون تجميع (15 + 24)</button>
+        <button class="btn btn-secondary" onclick="setAdditionMode('regroup')" id="btn-add-regroup">🔄 2. جمع مع إعادة التجميع (28 + 17)</button>
+        <button class="btn btn-secondary" onclick="setAdditionMode('custom')" id="btn-add-custom">🎲 مسألة جديدة عشوائية</button>
+      </div>
+
+      <div class="addition-workspace">
+        <!-- Left: Vertical Calculation Table -->
+        <div class="vertical-grid-card">
+          <div style="font-weight: 800; color: #475569; margin-bottom: 12px; font-size: 1rem;">
+            الجدول الرأسي (Vertical Method)
+          </div>
+
+          <table class="vertical-calc-table">
+            <thead>
+              <tr>
+                <th class="th-tens">Tens (عشرات)</th>
+                <th class="th-ones">Ones (آحاد)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Carry Row -->
+              <tr class="carry-row" id="add-carry-row" style="display: none;">
+                <td class="td-tens">
+                  <div class="carry-box" id="add-carry-box">+1</div>
+                </td>
+                <td class="td-ones" style="color: #94a3b8; font-size: 0.8rem;">—</td>
+              </tr>
+              <!-- Number 1 -->
+              <tr>
+                <td class="td-tens" id="add-num1-tens">1</td>
+                <td class="td-ones" id="add-num1-ones">5</td>
+              </tr>
+              <!-- Number 2 with Plus Sign -->
+              <tr>
+                <td class="td-tens" style="position: relative;">
+                  <span class="op-sign" style="position: absolute; right: 12px; top: 12px;">+</span>
+                  <span id="add-num2-tens">2</span>
+                </td>
+                <td class="td-ones" id="add-num2-ones">4</td>
+              </tr>
+              <!-- Result Row -->
+              <tr class="result-row">
+                <td class="td-tens" id="add-res-tens">?</td>
+                <td class="td-ones" id="add-res-ones">?</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="step-info-box" id="add-step-info">
+            الخطوة 1: انظر إلى خانة الآحاد (Ones) باللون البرتقالي!
+          </div>
+
+          <div class="stepper-controls">
+            <button class="btn btn-primary" onclick="nextAdditionStep()" id="add-next-btn">▶️ ابدأ الخطوة التالية</button>
+            <button class="btn btn-secondary" onclick="resetAdditionStep()">⏮️ إعادة المسألة</button>
+          </div>
+        </div>
+
+        <!-- Right: Base-10 Blocks Visualization -->
+        <div class="blocks-visual-card">
+          <div style="font-weight: 800; color: #334155; margin-bottom: 10px; font-size: 1.05rem;">
+            🧱 تمثيل الأعمدة والمكعبات (Place Value Blocks):
+          </div>
+          <p style="font-size: 0.88rem; color: #64748b; margin-bottom: 14px;">
+            كل عمود أزرق = <strong>1 Ten (10)</strong> | كل مكعب برتقالي = <strong>1 One (1)</strong>
+          </p>
+
+          <div class="blocks-section">
+            <div class="block-column">
+              <span class="block-column-title title-tens">Tens (عشرات)</span>
+              <div class="blocks-holder" id="add-tens-blocks">
+                <!-- Rods injected by JS -->
+              </div>
+            </div>
+            <div class="block-column">
+              <span class="block-column-title title-ones">Ones (آحاد)</span>
+              <div class="blocks-holder" id="add-ones-blocks">
+                <!-- Units injected by JS -->
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top: 16px; background: #f1f5f9; padding: 12px; border-radius: 12px; font-size: 0.88rem; color: #334155;">
+            💡 <strong>قاعدة المعاصر (Golden Rule):</strong><br>
+            إذا كان مجموع الآحاد 10 أو أكثر، نقوم بـ <em>Regrouping</em>: نأخذ 10 مكعبات آحاد ونجمعها في عمود عشرات واحد جديد (+1) يذهب لأعلى خانة العشرات!
+          </div>
+        </div>
+      </div>
+
+      <!-- Commutative Property of Addition (Page 51) -->
+      <div class="balance-card">
+        <div class="card-title" style="margin-bottom: 14px;">
+          <div class="icon" style="background: #fef3c7; color: #d97706;">⚖️</div>
+          <div>
+            <h3>Lesson 5: Commutative Property of Addition (خاصية الإبدال)</h3>
+            <span class="sub">كتاب المعاصر ص 51 • ترتيب الأعداد المضافة لا يغير الناتج أبداً!</span>
+          </div>
+        </div>
+
+        <p style="font-size: 0.95rem; color: #78350f; margin-bottom: 14px;">
+          جرب الضغط على زر <strong>(تبديل الأماكن Swap)</strong> وشاهد كيف يظل الميزان متعادلاً والناتج ثابتاً:
+        </p>
+
+        <div class="balance-animation-wrap">
+          <div class="balance-box" id="comm-side-a">
+            <span id="comm-a1">25</span> + <span id="comm-a2">16</span> = <strong id="comm-res1">41</strong>
+          </div>
+          <div class="balance-equal">⚖️ = ⚖️</div>
+          <div class="balance-box" id="comm-side-b">
+            <span id="comm-b1">16</span> + <span id="comm-b2">25</span> = <strong id="comm-res2">41</strong>
+          </div>
+        </div>
+
+        <div style="text-align: center;">
+          <button class="btn btn-accent" onclick="swapCommutative()">🔄 تبديل أماكن الأعداد (Swap Addends)</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- TAB 3: CHAPTER 3 (VERTICAL SUBTRACTION) -->
+  <!-- ============================================================== -->
+  <div id="tab-ch3" class="tab-pane">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">
+          <div class="icon">➖</div>
+          <div>
+            <h2>Chapter 3: Vertical Subtraction & Checking</h2>
+            <span class="sub">كتاب المعاصر ص 60-85 • الطرح الرأسي، الاستلاف وإعادة التسمية، والتحقق بالجمع</span>
+          </div>
+        </div>
+        <div>
+          <button class="speech-btn" onclick="speakText('في الشابتر الثالث نتعلم الطرح الرأسي. إذا كان رقم الآحاد بالأعلى أصغر من الأسفل، نقوم بالاستلاف من العشرات، ثم نتحقق من صحة الحل باستخدام الجمع')" title="استمع للشرح">🎙️</button>
+          <span class="badge-ch">Lessons 1 to 5</span>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap;">
+        <button class="btn btn-primary" onclick="setSubtractionMode('simple')" id="btn-sub-simple">✨ 1. طرح بسيط بدون استلاف (56 - 32)</button>
+        <button class="btn btn-secondary" onclick="setSubtractionMode('borrow')" id="btn-sub-borrow">🔄 2. طرح مع الاستلاف / Regrouping (54 - 26)</button>
+        <button class="btn btn-secondary" onclick="setSubtractionMode('custom')" id="btn-sub-custom">🎲 مسألة جديدة عشوائية</button>
+      </div>
+
+      <div class="subtraction-workspace">
+        <!-- Left: Table -->
+        <div class="vertical-grid-card">
+          <div style="font-weight: 800; color: #475569; margin-bottom: 12px; font-size: 1rem;">
+            طريقة الطرح الرأسي (Vertical Subtraction)
+          </div>
+
+          <table class="vertical-calc-table" style="border-color: #0284c7;">
+            <thead>
+              <tr>
+                <th class="th-tens" style="background: #0284c7;">Tens (عشرات)</th>
+                <th class="th-ones" style="background: #e11d48;">Ones (آحاد)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Borrow indication row -->
+              <tr class="carry-row" id="sub-borrow-row" style="display: none;">
+                <td class="td-tens">
+                  <div class="borrow-badge" id="sub-borrow-tens">4</div>
+                </td>
+                <td class="td-ones">
+                  <div class="borrow-badge" style="background: #fee2e2; border-color: #e11d48; color: #be123c;" id="sub-borrow-ones">14</div>
+                </td>
+              </tr>
+              <!-- Minuend -->
+              <tr>
+                <td class="td-tens" id="sub-min-tens">5</td>
+                <td class="td-ones" id="sub-min-ones">6</td>
+              </tr>
+              <!-- Subtrahend -->
+              <tr>
+                <td class="td-tens" style="position: relative;">
+                  <span class="op-sign" style="position: absolute; right: 12px; top: 12px; color: #e11d48;">−</span>
+                  <span id="sub-sub-tens">3</span>
+                </td>
+                <td class="td-ones" id="sub-sub-ones">2</td>
+              </tr>
+              <!-- Result -->
+              <tr class="result-row">
+                <td class="td-tens" id="sub-res-tens" style="color: #0369a1;">?</td>
+                <td class="td-ones" id="sub-res-ones" style="color: #be123c;">?</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="step-info-box" id="sub-step-info" style="background: #e0f2fe; border-color: #7dd3fc; color: #0369a1;">
+            الخطوة 1: نبدأ بطرح الآحاد (Ones)!
+          </div>
+
+          <div class="stepper-controls">
+            <button class="btn btn-primary" onclick="nextSubtractionStep()" id="sub-next-btn">▶️ الخطوة التالية</button>
+            <button class="btn btn-secondary" onclick="resetSubtractionStep()">⏮️ إعادة المسألة</button>
+          </div>
+        </div>
+
+        <!-- Right: Blocks with Cross-Out -->
+        <div class="blocks-visual-card">
+          <div style="font-weight: 800; color: #334155; margin-bottom: 10px; font-size: 1.05rem;">
+            ✂️ تمثيل الشطب والحذف (Cross-out Blocks):
+          </div>
+          <p style="font-size: 0.88rem; color: #64748b; margin-bottom: 14px;">
+            نمثل العدد الأكبر أولاً، ثم نشطب منه العدد المطروح:
+          </p>
+
+          <div class="blocks-section">
+            <div class="block-column">
+              <span class="block-column-title title-tens" style="background: #e0f2fe; color: #0369a1;">Tens (عشرات)</span>
+              <div class="blocks-holder" id="sub-tens-blocks"></div>
+            </div>
+            <div class="block-column">
+              <span class="block-column-title title-ones" style="background: #ffe4e6; color: #be123c;">Ones (آحاد)</span>
+              <div class="blocks-holder" id="sub-ones-blocks"></div>
+            </div>
+          </div>
+
+          <div style="margin-top: 16px; background: #f8fafc; padding: 12px; border-radius: 12px; font-size: 0.88rem; color: #334155;">
+            💡 <strong>قاعدة المعاصر للاستلاف (Borrowing):</strong><br>
+            إذا كان رقم الآحاد الذي نطرح منه أصغر، نستلف 1 من العشرات، فيتحول إلى 10 وحدات آحاد تضاف لآحادنا!
+          </div>
+        </div>
+      </div>
+
+      <!-- Lesson 5: Relation between Subtraction and Addition (Page 79) -->
+      <div class="relation-card">
+        <div class="card-title" style="margin-bottom: 14px;">
+          <div class="icon" style="background: #d1fae5; color: #059669;">🤖</div>
+          <div>
+            <h3>Lesson 5: Check Subtraction using Addition (التحقق بالجمع)</h3>
+            <span class="sub">كتاب المعاصر ص 79 • التأكد من صحة الطرح: (الفرق + المطروح = المطروح منه)</span>
+          </div>
+        </div>
+
+        <p style="font-size: 0.95rem; color: #065f46; margin-bottom: 14px;">
+          عندما نحسب: <strong>64 − 13 = 51</strong>، كيف نتأكد أن حلنا صحيح 100%؟ روبوت الفحص الذكي يقوم بجمع الناتج مع العدد المطروح:
+        </p>
+
+        <div class="fact-triangle">
+          <div class="fact-bubble">
+            <h4>المطروح منه (Minuend)</h4>
+            <div class="val" id="rel-min">64</div>
+          </div>
+          <div style="font-size: 2rem; font-weight: 900; color: #059669;">−</div>
+          <div class="fact-bubble">
+            <h4>المطروح (Subtrahend)</h4>
+            <div class="val" id="rel-sub">13</div>
+          </div>
+          <div style="font-size: 2rem; font-weight: 900; color: #059669;">=</div>
+          <div class="fact-bubble">
+            <h4>الفرق الناتج (Difference)</h4>
+            <div class="val" id="rel-diff">51</div>
+          </div>
+        </div>
+
+        <div class="checker-bot-wrap">
+          <div style="font-size: 32px;">🤖</div>
+          <div style="font-size: 1.15rem; font-weight: 800; color: #065f46;" id="checker-status-text">
+            اضغط زر الروبوت للتحقق من المسألة بالجمع!
+          </div>
+          <button class="btn btn-success" onclick="runCheckVerification()">🔍 افحص بالجمع (Check now!)</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- TAB 4: COMPREHENSIVE QUIZ & GAME -->
+  <!-- ============================================================== -->
+  <div id="tab-quiz" class="tab-pane">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">
+          <div class="icon" style="background: #fef08a; color: #a16207;">🏆</div>
+          <div>
+            <h2>اختبار التحدي الشامل للأبطال (Quiz Challenge)</h2>
+            <span class="sub">أسئلة متنوعة على الشباتر الثلاثة لتثبيت الفهم وربح النجوم والشهادة</span>
+          </div>
+        </div>
+        <div>
+          <button class="btn btn-secondary" onclick="restartQuiz()">🔄 إعادة الاختبار</button>
+        </div>
+      </div>
+
+      <div id="quiz-container">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- Certificate Modal -->
+<div class="modal-overlay" id="cert-modal">
+  <div class="modal-content">
+    <div class="cert-icon">🎖️</div>
+    <div class="cert-title">مبروك يا بطل الرياضيات!</div>
+    <div class="cert-body" id="cert-msg">
+      لقد أتممت دراسة وممارسة Chapters 1, 2, 3 من كتاب المعاصر بنجاح باهر!
+    </div>
+    <button class="btn btn-primary" onclick="closeCertModal()">استمر في التألق 🚀</button>
+  </div>
+</div>
+
+<script>
+/* ================= AUDIO SYNTHESIS (NO EXTERNAL FILES REQUIRED) ================= */
+let soundEnabled = true;
+const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+function playTone(freq, duration, type = 'sine') {
+  if (!soundEnabled) return;
+  try {
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    osc.type = type;
+    osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+    gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + duration);
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+    osc.start();
+    osc.stop(audioCtx.currentTime + duration);
+  } catch(e) {}
+}
+
+function playSuccessSound() {
+  playTone(523.25, 0.15); // C5
+  setTimeout(() => playTone(659.25, 0.15), 120); // E5
+  setTimeout(() => playTone(783.99, 0.25), 240); // G5
+  setTimeout(() => playTone(1046.50, 0.35), 360); // C6
+}
+
+function playClickSound() {
+  playTone(400, 0.06, 'triangle');
+}
+
+function playWrongSound() {
+  playTone(220, 0.25, 'sawtooth');
+}
+
+function toggleAudio() {
+  soundEnabled = !soundEnabled;
+  document.getElementById('sound-btn').innerText = soundEnabled ? '🔊 الصوت: شغال' : '🔇 الصوت: صامت';
+}
+
+function speakText(text) {
+  if (!('speechSynthesis' in window)) return;
+  window.speechSynthesis.cancel();
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = 'ar-SA';
+  utterance.rate = 0.95;
+  window.speechSynthesis.speak(utterance);
+}
+
+/* ================= SCORE & CONFETTI ================= */
+let stars = 0;
+function addStars(count = 1) {
+  stars += count;
+  document.getElementById('star-count').innerText = stars;
+  playSuccessSound();
+  launchConfetti();
+}
+
+function launchConfetti() {
+  const canvas = document.getElementById('confetti-canvas');
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  const pieces = [];
+  const colors = ['#f43f5e', '#3b82f6', '#10b981', '#f59e0b', '#8b5cf6', '#ec4899'];
+  for (let i = 0; i < 75; i++) {
+    pieces.push({
+      x: canvas.width / 2,
+      y: canvas.height / 3,
+      vx: (Math.random() - 0.5) * 14,
+      vy: (Math.random() - 0.7) * 14,
+      size: Math.random() * 8 + 4,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      rotation: Math.random() * 360,
+      vRot: (Math.random() - 0.5) * 10
+    });
+  }
+
+  let frames = 0;
+  function render() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    pieces.forEach(p => {
+      p.x += p.vx;
+      p.y += p.vy;
+      p.vy += 0.4; // gravity
+      p.rotation += p.vRot;
+      ctx.save();
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.rotation * Math.PI / 180);
+      ctx.fillStyle = p.color;
+      ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
+      ctx.restore();
+    });
+    frames++;
+    if (frames < 75) requestAnimationFrame(render);
+    else ctx.clearRect(0, 0, canvas.width, canvas.height);
+  }
+  render();
+}
+
+/* ================= TAB NAVIGATION ================= */
+function switchTab(tabId, btn) {
+  playClickSound();
+  document.querySelectorAll('.tab-pane').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+  document.getElementById(`tab-${tabId}`).classList.add('active');
+  btn.classList.add('active');
+}
+
+/* ============================================================== */
+/* CHAPTER 1: GRAPHS AND CHARTS LOGIC */
+/* ============================================================== */
+const toysSurveyData = [
+  { type: 'bicycle', emoji: '🚲', name: 'Bicycle' },
+  { type: 'kite', emoji: '🪁', name: 'Kite' },
+  { type: 'car', emoji: '🚗', name: 'Car' },
+  { type: 'kite', emoji: '🪁', name: 'Kite' },
+  { type: 'ball', emoji: '⚽', name: 'Ball' },
+  { type: 'doll', emoji: '🪆', name: 'Doll' },
+  { type: 'bicycle', emoji: '🚲', name: 'Bicycle' },
+  { type: 'kite', emoji: '🪁', name: 'Kite' },
+  { type: 'ball', emoji: '⚽', name: 'Ball' },
+  { type: 'doll', emoji: '🪆', name: 'Doll' },
+  { type: 'bicycle', emoji: '🚲', name: 'Bicycle' },
+  { type: 'bicycle', emoji: '🚲', name: 'Bicycle' },
+  { type: 'doll', emoji: '🪆', name: 'Doll' },
+  { type: 'kite', emoji: '🪁', name: 'Kite' },
+  { type: 'doll', emoji: '🪆', name: 'Doll' },
+  { type: 'bicycle', emoji: '🚲', name: 'Bicycle' },
+  { type: 'bicycle', emoji: '🚲', name: 'Bicycle' },
+  { type: 'car', emoji: '🚗', name: 'Car' },
+  { type: 'ball', emoji: '⚽', name: 'Ball' },
+  { type: 'kite', emoji: '🪁', name: 'Kite' },
+  { type: 'bicycle', emoji: '🚲', name: 'Bicycle' },
+  { type: 'ball', emoji: '⚽', name: 'Ball' },
+  { type: 'bicycle', emoji: '🚲', name: 'Bicycle' },
+  { type: 'bicycle', emoji: '🚲', name: 'Bicycle' },
+  { type: 'kite', emoji: '🪁', name: 'Kite' }
+];
+
+const counts = { kite: 0, bicycle: 0, doll: 0, ball: 0, car: 0 };
+
+function initCh1() {
+  // Build columns with 10 empty cells each
+  ['kite', 'bicycle', 'doll', 'ball', 'car'].forEach(k => {
+    const col = document.getElementById(`col-${k}`);
+    col.innerHTML = '';
+    for (let i = 1; i <= 10; i++) {
+      const cell = document.createElement('div');
+      cell.className = 'graph-cell';
+      cell.id = `cell-${k}-${i}`;
+      col.appendChild(cell);
+    }
+  });
+
+  // Render toys grid
+  const grid = document.getElementById('toys-grid-container');
+  grid.innerHTML = '';
+  toysSurveyData.forEach((item, idx) => {
+    const card = document.createElement('div');
+    card.className = 'toy-card';
+    card.id = `toy-${idx}`;
+    card.innerHTML = `<span class="toy-emoji">${item.emoji}</span><span class="toy-name">${item.name}</span>`;
+    card.onclick = () => countToy(item.type, idx);
+    grid.appendChild(card);
+  });
+}
+
+function countToy(type, idx) {
+  const card = document.getElementById(`toy-${idx}`);
+  if (card.classList.contains('counted')) return;
+  card.classList.add('counted');
+  playClickSound();
+
+  counts[type]++;
+  document.getElementById(`count-${type}`).innerText = counts[type];
+
+  // Fill cell
+  const cell = document.getElementById(`cell-${type}-${counts[type]}`);
+  if (cell) {
+    cell.classList.add('filled', `c-${type}`);
+  }
+
+  // Check if all counted
+  const allCounted = toysSurveyData.every((_, i) => document.getElementById(`toy-${i}`).classList.contains('counted'));
+  if (allCounted) {
+    addStars(3);
+    speakText('رائع جداً! لقد أكملت تمثيل جميع البيانات في الرسم البياني!');
+  }
+}
+
+function resetCh1Survey() {
+  playClickSound();
+  Object.keys(counts).forEach(k => counts[k] = 0);
+  ['kite', 'bicycle', 'doll', 'ball', 'car'].forEach(k => {
+    document.getElementById(`count-${k}`).innerText = 0;
+    for (let i = 1; i <= 10; i++) {
+      const cell = document.getElementById(`cell-${k}-${i}`);
+      if (cell) cell.className = 'graph-cell';
+    }
+  });
+  toysSurveyData.forEach((_, idx) => {
+    const card = document.getElementById(`toy-${idx}`);
+    if (card) card.classList.remove('counted');
+  });
+}
+
+function checkCh1Answer(btn, isCorrect, qId) {
+  if (btn.classList.contains('correct') || btn.classList.contains('wrong')) return;
+  if (isCorrect) {
+    btn.classList.add('correct');
+    addStars(1);
+  } else {
+    btn.classList.add('wrong');
+    playWrongSound();
+  }
+}
+
+/* ============================================================== */
+/* CHAPTER 2: VERTICAL ADDITION LOGIC */
+/* ============================================================== */
+let addCurrentMode = 'simple';
+let addStep = 0;
+let addN1 = 15, addN2 = 24;
+
+function setAdditionMode(mode) {
+  playClickSound();
+  addCurrentMode = mode;
+  document.getElementById('btn-add-simple').className = mode === 'simple' ? 'btn btn-primary' : 'btn btn-secondary';
+  document.getElementById('btn-add-regroup').className = mode === 'regroup' ? 'btn btn-primary' : 'btn btn-secondary';
+  document.getElementById('btn-add-custom').className = mode === 'custom' ? 'btn btn-primary' : 'btn btn-secondary';
+
+  if (mode === 'simple') {
+    addN1 = 15; addN2 = 24;
+  } else if (mode === 'regroup') {
+    addN1 = 28; addN2 = 17;
+  } else {
+    // Random 2 digit
+    const ones1 = Math.floor(Math.random() * 9) + 1;
+    const ones2 = Math.floor(Math.random() * 9) + 1;
+    const tens1 = Math.floor(Math.random() * 4) + 1;
+    const tens2 = Math.floor(Math.random() * 4) + 1;
+    addN1 = tens1 * 10 + ones1;
+    addN2 = tens2 * 10 + ones2;
+  }
+  resetAdditionStep();
+}
+
+function resetAdditionStep() {
+  addStep = 0;
+  const t1 = Math.floor(addN1 / 10), o1 = addN1 % 10;
+  const t2 = Math.floor(addN2 / 10), o2 = addN2 % 10;
+
+  document.getElementById('add-num1-tens').innerText = t1;
+  document.getElementById('add-num1-ones').innerText = o1;
+  document.getElementById('add-num2-tens').innerText = t2;
+  document.getElementById('add-num2-ones').innerText = o2;
+  document.getElementById('add-res-tens').innerText = '?';
+  document.getElementById('add-res-ones').innerText = '?';
+
+  const carryRow = document.getElementById('add-carry-row');
+  const carryBox = document.getElementById('add-carry-box');
+  carryRow.style.display = 'none';
+  carryBox.classList.remove('active');
+
+  document.getElementById('add-next-btn').innerText = '▶️ الخطوة التالية';
+  document.getElementById('add-step-info').innerText = 'الخطوة 1: انظر إلى خانة الآحاد (Ones) باللون البرتقالي!';
+
+  renderAdditionBlocks(t1 + t2, o1 + o2, false);
+}
+
+function renderAdditionBlocks(tens, ones, showTotal = false) {
+  const tBox = document.getElementById('add-tens-blocks');
+  const oBox = document.getElementById('add-ones-blocks');
+  tBox.innerHTML = '';
+  oBox.innerHTML = '';
+
+  const t1 = Math.floor(addN1 / 10), o1 = addN1 % 10;
+  const t2 = Math.floor(addN2 / 10), o2 = addN2 % 10;
+
+  for (let i = 0; i < (showTotal ? tens : (t1 + t2)); i++) {
+    const rod = document.createElement('div');
+    rod.className = 'ten-rod';
+    tBox.appendChild(rod);
+  }
+
+  for (let i = 0; i < (showTotal ? ones : (o1 + o2)); i++) {
+    const unit = document.createElement('div');
+    unit.className = 'one-unit';
+    oBox.appendChild(unit);
+  }
+}
+
+function nextAdditionStep() {
+  playClickSound();
+  const t1 = Math.floor(addN1 / 10), o1 = addN1 % 10;
+  const t2 = Math.floor(addN2 / 10), o2 = addN2 % 10;
+  const onesSum = o1 + o2;
+  const hasRegroup = onesSum >= 10;
+
+  if (addStep === 0) {
+    // Step 1: Add Ones
+    addStep = 1;
+    if (hasRegroup) {
+      document.getElementById('add-carry-row').style.display = 'table-row';
+      document.getElementById('add-carry-box').classList.add('active');
+      document.getElementById('add-res-ones').innerText = onesSum % 10;
+      document.getElementById('add-step-info').innerHTML = 
+        `نجمع الآحاد: ${o1} + ${o2} = <strong>${onesSum}</strong>.<br>` +
+        `⚠️ لأن الناتج 10 أو أكثر، نكتب <strong>${onesSum % 10}</strong> ونرحل <strong>+1 عشرات</strong> للأعلى (Regrouping)!`;
+      speakText(`نجمع الآحاد: الناتج ${onesSum}. نكتب ${onesSum % 10} ونرحل واحد للعشرات`);
+    } else {
+      document.getElementById('add-res-ones').innerText = onesSum;
+      document.getElementById('add-step-info').innerHTML = 
+        `نجمع الآحاد: ${o1} + ${o2} = <strong>${onesSum}</strong>. كتبنا ${onesSum} في الآحاد!`;
+      speakText(`نجمع الآحاد: ${o1} زائد ${o2} يساوي ${onesSum}`);
+    }
+  } else if (addStep === 1) {
+    // Step 2: Add Tens
+    addStep = 2;
+    const carry = hasRegroup ? 1 : 0;
+    const tensSum = t1 + t2 + carry;
+    document.getElementById('add-res-tens').innerText = tensSum;
+    document.getElementById('add-step-info').innerHTML = 
+      `الآن نجمع العشرات: ${hasRegroup ? '1 + ' : ''}${t1} + ${t2} = <strong>${tensSum}</strong>.<br>` +
+      `🎉 الناتج النهائي: <strong>${tensSum * 10 + (onesSum % 10)}</strong>!`;
+    document.getElementById('add-next-btn').innerText = '🎉 أحسنت! مسألة أخرى';
+    addStars(1);
+    speakText(`والآن نجمع العشرات، فيكون الناتج النهائي ${tensSum * 10 + (onesSum % 10)}`);
+  } else {
+    // Restart or change
+    setAdditionMode(addCurrentMode);
+  }
+}
+
+/* Commutative Property Swap */
+let commSwapped = false;
+function swapCommutative() {
+  playClickSound();
+  commSwapped = !commSwapped;
+  const a1 = document.getElementById('comm-a1');
+  const a2 = document.getElementById('comm-a2');
+  const b1 = document.getElementById('comm-b1');
+  const b2 = document.getElementById('comm-b2');
+
+  if (commSwapped) {
+    a1.innerText = '16'; a2.innerText = '25';
+    b1.innerText = '25'; b2.innerText = '16';
+  } else {
+    a1.innerText = '25'; a2.innerText = '16';
+    b1.innerText = '16'; b2.innerText = '25';
+  }
+  document.getElementById('comm-side-a').style.transform = 'scale(1.08)';
+  document.getElementById('comm-side-b').style.transform = 'scale(1.08)';
+  setTimeout(() => {
+    document.getElementById('comm-side-a').style.transform = 'scale(1)';
+    document.getElementById('comm-side-b').style.transform = 'scale(1)';
+  }, 300);
+
+  speakText('خاصية الإبدال: تغيير الترتيب لا يغير الناتج، الناتج دائما 41');
+}
+
+/* ============================================================== */
+/* CHAPTER 3: VERTICAL SUBTRACTION LOGIC */
+/* ============================================================== */
+let subCurrentMode = 'simple';
+let subStep = 0;
+let subN1 = 56, subN2 = 32;
+
+function setSubtractionMode(mode) {
+  playClickSound();
+  subCurrentMode = mode;
+  document.getElementById('btn-sub-simple').className = mode === 'simple' ? 'btn btn-primary' : 'btn btn-secondary';
+  document.getElementById('btn-sub-borrow').className = mode === 'borrow' ? 'btn btn-primary' : 'btn btn-secondary';
+  document.getElementById('btn-sub-custom').className = mode === 'custom' ? 'btn btn-primary' : 'btn btn-secondary';
+
+  if (mode === 'simple') {
+    subN1 = 56; subN2 = 32;
+  } else if (mode === 'borrow') {
+    subN1 = 54; subN2 = 26;
+  } else {
+    // Random 2 digit where minuend > subtrahend
+    const t1 = Math.floor(Math.random() * 4) + 4;
+    const t2 = Math.floor(Math.random() * 3) + 1;
+    const o1 = Math.floor(Math.random() * 5);
+    const o2 = Math.floor(Math.random() * 4) + 5;
+    subN1 = t1 * 10 + o1;
+    subN2 = t2 * 10 + o2;
+  }
+  resetSubtractionStep();
+}
+
+function resetSubtractionStep() {
+  subStep = 0;
+  const t1 = Math.floor(subN1 / 10), o1 = subN1 % 10;
+  const t2 = Math.floor(subN2 / 10), o2 = subN2 % 10;
+
+  document.getElementById('sub-min-tens').innerText = t1;
+  document.getElementById('sub-min-ones').innerText = o1;
+  document.getElementById('sub-sub-tens').innerText = t2;
+  document.getElementById('sub-sub-ones').innerText = o2;
+  document.getElementById('sub-res-tens').innerText = '?';
+  document.getElementById('sub-res-ones').innerText = '?';
+
+  document.getElementById('sub-borrow-row').style.display = 'none';
+  document.getElementById('sub-next-btn').innerText = '▶️ الخطوة التالية';
+  document.getElementById('sub-step-info').innerText = 'الخطوة 1: نبدأ بطرح الآحاد (Ones)!';
+
+  renderSubtractionBlocks(t1, o1);
+
+  // Update Lesson 5 fact family
+  document.getElementById('rel-min').innerText = subN1;
+  document.getElementById('rel-sub').innerText = subN2;
+  document.getElementById('rel-diff').innerText = subN1 - subN2;
+}
+
+function renderSubtractionBlocks(tens, ones) {
+  const tBox = document.getElementById('sub-tens-blocks');
+  const oBox = document.getElementById('sub-ones-blocks');
+  tBox.innerHTML = '';
+  oBox.innerHTML = '';
+
+  for (let i = 0; i < tens; i++) {
+    const rod = document.createElement('div');
+    rod.className = 'ten-rod';
+    tBox.appendChild(rod);
+  }
+  for (let i = 0; i < ones; i++) {
+    const unit = document.createElement('div');
+    unit.className = 'one-unit';
+    oBox.appendChild(unit);
+  }
+}
+
+function nextSubtractionStep() {
+  playClickSound();
+  const t1 = Math.floor(subN1 / 10), o1 = subN1 % 10;
+  const t2 = Math.floor(subN2 / 10), o2 = subN2 % 10;
+  const needsBorrow = o1 < o2;
+
+  if (subStep === 0) {
+    subStep = 1;
+    if (needsBorrow) {
+      document.getElementById('sub-borrow-row').style.display = 'table-row';
+      document.getElementById('sub-borrow-tens').innerText = t1 - 1;
+      document.getElementById('sub-borrow-ones').innerText = o1 + 10;
+      const resOnes = (o1 + 10) - o2;
+      document.getElementById('sub-res-ones').innerText = resOnes;
+      document.getElementById('sub-step-info').innerHTML = 
+        `الآحاد: ${o1} أصغر من ${o2}، نستلف 1 من العشرات!<br>` +
+        `العشرات تصبح <strong>${t1 - 1}</strong>، والآحاد تصبح <strong>${o1 + 10}</strong>.<br>` +
+        `الآن: ${o1 + 10} − ${o2} = <strong>${resOnes}</strong>.`;
+      speakText(`نستلف واحد من العشرات. تصبح الآحاد ${o1 + 10}، نطرح ${o2} يتبقى ${resOnes}`);
+    } else {
+      const resOnes = o1 - o2;
+      document.getElementById('sub-res-ones').innerText = resOnes;
+      document.getElementById('sub-step-info').innerHTML = 
+        `نطرح الآحاد: ${o1} − ${o2} = <strong>${resOnes}</strong>.`;
+      speakText(`نطرح الآحاد: ${o1} ناقص ${o2} يساوي ${resOnes}`);
+    }
+  } else if (subStep === 1) {
+    subStep = 2;
+    const finalTens = needsBorrow ? (t1 - 1) - t2 : t1 - t2;
+    document.getElementById('sub-res-tens').innerText = finalTens;
+    const finalTotal = subN1 - subN2;
+    document.getElementById('sub-step-info').innerHTML = 
+      `نطرح العشرات: ${needsBorrow ? (t1 - 1) : t1} − ${t2} = <strong>${finalTens}</strong>.<br>` +
+      `🎉 ناتج الطرح هو: <strong>${finalTotal}</strong>!`;
+    document.getElementById('sub-next-btn').innerText = '🎉 أحسنت! مسألة أخرى';
+    addStars(1);
+    speakText(`نطرح العشرات، فيكون الناتج النهائي ${finalTotal}`);
+  } else {
+    setSubtractionMode(subCurrentMode);
+  }
+}
+
+/* Fact family check */
+function runCheckVerification() {
+  playSuccessSound();
+  const min = parseInt(document.getElementById('rel-min').innerText);
+  const sub = parseInt(document.getElementById('rel-sub').innerText);
+  const diff = parseInt(document.getElementById('rel-diff').innerText);
+
+  const status = document.getElementById('checker-status-text');
+  status.innerHTML = `✅ تحقق الروبوت بنجاح: الفرق (${diff}) + المطروح (${sub}) = <strong>${diff + sub}</strong> وهو نفس المطروح منه (${min})! إجابتك صحيحة 100%!`;
+  addStars(2);
+  speakText(`تم الفحص بنجاح! ناتج الجمع يطابق المطروح منه، الحل صحيح تماماً.`);
+}
+
+/* ============================================================== */
+/* QUIZ LOGIC */
+/* ============================================================== */
+const quizQuestions = [
+  {
+    q: 'في التمثيل البياني، إذا كان عمود الدراجة 9 وعمود الكرة 4، فكم يزيد عدد محبي الدراجة عن الكرة؟ (9 − 4)',
+    opts: ['4 طلاب', '5 طلاب', '13 طالب'],
+    ans: 1,
+    hint: 'نطرح: 9 ناقص 4 = 5'
+  },
+  {
+    q: 'عند جمع 34 + 25 رأسياً، ناتج جمع الآحاد (4 + 5) هو:',
+    opts: ['9', '8', '7'],
+    ans: 0,
+    hint: '4 + 5 = 9'
+  },
+  {
+    q: 'إذا كان 15 + 40 = 55، فما ناتج 40 + 15 بحسب خاصية الإبدال (Commutative Property)؟',
+    opts: ['45', '55', '65'],
+    ans: 1,
+    hint: 'ترتيب الأعداد لا يغير المجموع!'
+  },
+  {
+    q: 'في مسألة الطرح 43 − 17، لماذا نحتاج إلى الاستلاف (Regrouping)؟',
+    opts: ['لأن الآحاد 3 أصغر من 7 ولا يمكن طرح 7 من 3', 'لأن العشرات 4 أكبر من 1', 'لأن الناتج صفر'],
+    ans: 0,
+    hint: '3 أصغر من 7، لذلك نستلف 1 من خانة العشرات لتصبح 13.'
+  },
+  {
+    q: 'إذا كان 75 − 38 = 37، فكيف نتحقق من صحة الحل باستخدام الجمع؟',
+    opts: ['نجمع: 37 + 38 = 75', 'نطرح: 75 − 37 = 38', 'نضرب: 37 × 2'],
+    ans: 0,
+    hint: 'الفرق + المطروح = المطروح منه!'
+  }
+];
+
+let quizAnswersGiven = 0;
+
+function renderQuiz() {
+  const container = document.getElementById('quiz-container');
+  container.innerHTML = '';
+  quizQuestions.forEach((item, idx) => {
+    const qDiv = document.createElement('div');
+    qDiv.className = 'qa-item';
+    qDiv.style.flexDirection = 'column';
+    qDiv.style.alignItems = 'flex-start';
+    qDiv.style.marginBottom = '18px';
+
+    const title = document.createElement('div');
+    title.className = 'qa-question';
+    title.innerHTML = `<span>سؤال ${idx + 1}:</span> ${item.q}`;
+    qDiv.appendChild(title);
+
+    const optsDiv = document.createElement('div');
+    optsDiv.className = 'qa-options';
+    optsDiv.style.marginTop = '10px';
+
+    item.opts.forEach((optText, oIdx) => {
+      const btn = document.createElement('button');
+      btn.className = 'opt-btn';
+      btn.innerText = optText;
+      btn.onclick = () => {
+        if (btn.classList.contains('correct') || btn.classList.contains('wrong')) return;
+        if (oIdx === item.ans) {
+          btn.classList.add('correct');
+          addStars(2);
+          quizAnswersGiven++;
+          if (quizAnswersGiven === quizQuestions.length) {
+            setTimeout(showCertificate, 600);
+          }
+        } else {
+          btn.classList.add('wrong');
+          playWrongSound();
+        }
+      };
+      optsDiv.appendChild(btn);
+    });
+
+    qDiv.appendChild(optsDiv);
+    container.appendChild(qDiv);
+  });
+}
+
+function restartQuiz() {
+  quizAnswersGiven = 0;
+  renderQuiz();
+}
+
+function showCertificate() {
+  document.getElementById('cert-modal').classList.add('active');
+  playSuccessSound();
+  launchConfetti();
+}
+
+function closeCertModal() {
+  document.getElementById('cert-modal').classList.remove('active');
+}
+
+// Initial setup
+window.addEventListener('DOMContentLoaded', () => {
+  initCh1();
+  setAdditionMode('simple');
+  setSubtractionMode('simple');
+  renderQuiz();
+});
+</script>
+</body>
+</html>
